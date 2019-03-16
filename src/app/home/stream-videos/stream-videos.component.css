@@ -1,0 +1,83 @@
+
+
+.streamVideos hr{
+    margin-top: 0rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+ .item-video-btn {
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 100px 100px 100px 100px;
+    -moz-border-radius: 100px 100px 100px 100px;
+    border-radius: 100px 100px 100px 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.42);
+    -webkit-transition: transform 0.3s ease 0s;
+    -moz-transition: transform 0.3s ease 0s;
+    -o-transition: transform 0.3s ease 0s;
+    -ms-transition: transform 0.3s ease 0s;
+    transition: transform 0.3s ease 0s;
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+}
+.item-video-btn:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 12%;
+    transform: translate(-50%, -50%);
+    border: 9px solid transparent;
+    border-left: 15px solid #fff;
+}
+.videoItem:hover .item-video-btn {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+.videoItem:hover .item-video-btn:after {
+    border-left: 15px solid #013dac;
+}
+
+.videoItem:hover{
+    outline: none !important;
+}
+.streams, .videos{
+    font-weight: 500;
+    cursor: pointer;
+}
+.streams:hover , .videos:hover{
+    color:#0139a1 !important;
+}
+
+
+@media (min-width: 768px){
+
+    .card{
+        border-color: #333333;
+        background: #171717;
+    }
+    
+    .card:hover{
+        box-shadow: 0 8px 34px 5px #0a0404;
+        
+        transform: scale(1.04);
+        z-index: 9999;
+        overflow: hidden;
+    }
+    .card:hover > img{
+        width: 100%;
+       position: relative;
+    }
+}

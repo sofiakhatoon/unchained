@@ -1,0 +1,38 @@
+<section class="container streamVideos">
+  <br />
+  <div class="row">
+    <div class="col-sm-8">
+      <h2><a class="streams" (click)='viewStreams()'>STREAMS</a> / <a class="videos" (click)='viewVideos()' >VIDEOS</a> </h2>
+    </div>
+    <div class="col-sm-4 text-right">
+
+      <a routerLink='videos' class="moreClick">click for more <i></i> </a>
+    </div>
+
+
+  </div>
+
+
+  <hr />
+  <div class="row" *ngIf="items" >
+
+    <a routerLink='/videos' class="col-sm-3 videoItem"   *ngFor="let item of items">
+
+      <div class="card" style="width: 100%;">
+
+        <img src="../../../assets/img/{{item}}" width="100%" height="160px" />
+
+        <span class="item-video-btn">
+
+        </span>
+      </div>
+
+    </a>
+
+
+
+  </div>
+
+
+
+</section>

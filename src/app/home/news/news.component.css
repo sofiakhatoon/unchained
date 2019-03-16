@@ -1,0 +1,28 @@
+.card{
+    background-color: #1d1d1d;
+  
+}
+.card p{
+    color: aliceblue;
+    font-size: 0.9rem;
+    line-height: 1.2;
+
+}
+.card h5{
+    font-weight: 900;
+}
+.card:hover {
+    box-shadow: 0 8px 34px 5px #0a0404;
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+    z-index: 9999;
+    overflow: hidden;
+    cursor: pointer;
+}
+span{
+    color: #4a4a4a;
+}
+.card-footer{
+    border:none;
+    background: transparent;
+}

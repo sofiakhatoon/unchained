@@ -1,0 +1,24 @@
+img{
+    width: 100%;
+}
+ngb-carousel.carousel.slide:focus {
+    outline:none!important;
+
+}
+
+ngb-carousel.carousel.slide{
+    box-shadow: 0 8px 34px 5px #000000;
+}
+
+.carousel-item.active:focus{
+    border:none;
+}
+
+
+@media (min-width: 768px){
+
+    .carousel-caption{
+            text-align: left;
+            bottom: 20%;
+    }
+}
