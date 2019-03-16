@@ -13,6 +13,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { StreamVideosComponent } from './home/stream-videos/stream-videos.component';
 import { NewsComponent } from './home/news/news.component';
+import { CalendarMinComponent } from './home/news/calendar-min/calendar-min.component';
 
 
 
@@ -28,7 +29,8 @@ import { NewsComponent } from './home/news/news.component';
       CalendarComponent,
       StreamVideosComponent,
       NewsComponent,
-      AnimateComponent
+      AnimateComponent,
+      CalendarMinComponent
       
    ],
    imports: [

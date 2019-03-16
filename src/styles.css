@@ -127,9 +127,9 @@ hr {
   border: none !important;
 }
 
-@media (min-width: 768px) {
-  section {
-
+@media (min-width: 1200px) {
+   .container {
+    max-width: 1354px !important;
   }
 }
 @media (max-width: 768px) {

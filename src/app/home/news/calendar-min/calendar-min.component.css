@@ -1,0 +1,60 @@
+.card {
+  background-color: #1d1d1d;
+}
+.card p {
+  color: aliceblue;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+.card h5 {
+  font-weight: 900;
+}
+
+span {
+  color: #4a4a4a;
+}
+.card-footer {
+  border: none;
+  background: transparent;
+}
+
+ul {
+  list-style: none;
+  padding: 0 0 0.6rem 0;
+}
+ul li {
+  float: left;
+  width: 25%;
+  height: 100%;
+  cursor: pointer;
+  padding: 1rem !important;
+}
+ul li a i{
+    color:#a5a5a5;
+}
+ul li a{
+    height: 100%;
+}
+ul li:hover {
+    background: #4a4a4a;
+}
+ ul li a:hover > i{
+    transform: scale(1.2);
+    color:white !important;
+}
+a {
+  color: white !important;
+}
+header h3 {
+  font-weight: 700;
+  margin-bottom: 0 !important;
+}
+.card-header {
+  padding: 0 !important;
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+}
+.card-header header {
+  background: #151515;
+  padding: 0.9rem;
+}
