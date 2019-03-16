@@ -1,12 +1,13 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 <section class="container views">
     <br/>
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8 col-4">
             <h2>NEWS </h2>
         </div>
-        <div class="col-sm-4 text-right">
+        <div class="col-sm-4 col-4 text-right">
       
-            <a routerLink='videos' class="moreClick">click for more <i></i> </a>
+            <a routerLink='videos' class="moreClick">click for more  </a>
         </div>
   
   
@@ -15,57 +16,28 @@
   
     <hr/>
   <div class="row">
-    <div class="col-sm-3">
-        <div class="card" style="width: 100%;">
-            <img class="card-img-top" src="../../../assets/img/views.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-left">Pro League Season 9: NAVI.GG.BET debut</h5>
-              <p>On March 15, at 22:45 CET, the NAVI.GG.BET team will debut in the 9th season of the Pro League. The rival of the "yellow-black" will be PENTA Sports.</p>
-              
-            </div>
-            <div class="card-footer">
-                <span>05 Apr 2019</span>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card" style="width: 100%;">
-            <img class="card-img-top" src="../../../assets/img/views.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-left">Pro League Season 9: NAVI.GG.BET debut</h5>
-              <p>On March 15, at 22:45 CET, the NAVI.GG.BET team will debut in the 9th season of the Pro League. The rival of the "yellow-black" will be PENTA Sports.</p>
-              
-            </div>
-            <div class="card-footer">
-                <span>05 Apr 2019</span>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card" style="width: 100%;">
-            <img class="card-img-top" src="../../../assets/img/views.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-left">Pro League Season 9: NAVI.GG.BET debut</h5>
-              <p>On March 15, at 22:45 CET, the NAVI.GG.BET team will debut in the 9th season of the Pro League. The rival of the "yellow-black" will be PENTA Sports.</p>
-              
-            </div>
-            <div class="card-footer">
-                <span>05 Apr 2019</span>
-            </div>
-          </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card" style="width: 100%;">
-            <img class="card-img-top" src="../../../assets/img/views.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title text-left">Pro League Season 9: NAVI.GG.BET debut</h5>
-              <p>On March 15, at 22:45 CET, the NAVI.GG.BET team will debut in the 9th season of the Pro League. The rival of the "yellow-black" will be PENTA Sports.</p>
-              
-            </div>
-            <div class="card-footer">
-                <span>05 Apr 2019</span>
-            </div>
+    <div class="col-sm-3" *ngFor='let item of count'>
+        <div class="card" style="width: 100%;" >
+          
+              <img class="card-img-top" src="../../../assets/img/views.jpg" alt="Card image cap">
          
+      
+            <div class="card-body">
+              <h5 class="card-title text-left">Pro League Season 9: NAVI.GG.BET debut</h5>
+              <p>On March 15, at 22:45 CET, the NAVI.GG.BET team will debut in the 9th season of the Pro League. The rival of the "yellow-black" will be PENTA Sports.</p>
+              
+            </div>
+            <div class="card-footer">
+                <span>05 Apr 2019   </span>
+                <span style="float:right">25
+                    <i class="fa fa-comments"> </i> 
+                </span>
+                <span style="float:right">999
+                    <i class="fa fa-eye"> </i> &nbsp;
+                </span>
+
+                
+            </div>
           </div>
     </div>
     

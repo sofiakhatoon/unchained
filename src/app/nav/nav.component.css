@@ -62,4 +62,18 @@
         z-index: 9999;
         border-bottom:1px solid #000b20 !important;
     }
+.logo{
+    width: 31%;
+    top: 9px;
+    position: absolute;
+    -webkit-transition: top 2s linear; /* Safari */
+    transition: top 2.5s linear;
+}
+.logoPosition{
+    -webkit-transition: opacity 1s linear; /* Safari */
+    transition: opacity 1.5s linear;
+
+    opacity: 0.1 !important;
+}
+    
 }

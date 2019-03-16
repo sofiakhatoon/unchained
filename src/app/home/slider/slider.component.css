@@ -13,7 +13,9 @@ ngb-carousel.carousel.slide{
 .carousel-item.active:focus{
     border:none;
 }
-
+ngb-carousel{
+    margin-bottom: 2.8%;
+}
 
 @media (min-width: 768px){
 

@@ -15,6 +15,8 @@ export class SliderComponent implements OnInit {
     config.wrap=true;
     config.keyboard=true;
     config.pauseOnHover=true;
+    config.showNavigationArrows=false;
+    
 
   }
 

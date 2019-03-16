@@ -61,6 +61,16 @@
     color:#0139a1 !important;
 }
 
+.videoItem{
+    margin-bottom: 5%;
+}
+
+img{
+    height: auto;
+}
+
+
+
 
 @media (min-width: 768px){
 
@@ -81,3 +91,5 @@
        position: relative;
     }
 }
+
+
