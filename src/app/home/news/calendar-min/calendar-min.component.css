@@ -58,3 +58,26 @@ header h3 {
   background: #151515;
   padding: 0.9rem;
 }
+.card-body{
+  padding: 0;
+}
+.card-body .table{
+  width: 100%;
+  min-width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background: #1d1d1d;
+
+}
+
+.card-body .table tr td{
+  border: none !important;
+}
+.card-body .table thead th{
+  border-color: #242424;
+}
+
+.card-body .table tr{
+  cursor: pointer !important;
+}

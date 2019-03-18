@@ -14,6 +14,11 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { StreamVideosComponent } from './home/stream-videos/stream-videos.component';
 import { NewsComponent } from './home/news/news.component';
 import { CalendarMinComponent } from './home/news/calendar-min/calendar-min.component';
+import { FixtureComponent } from './fixture/fixture.component';
+
+
+
+
 
 
 
@@ -30,8 +35,8 @@ import { CalendarMinComponent } from './home/news/calendar-min/calendar-min.comp
       StreamVideosComponent,
       NewsComponent,
       AnimateComponent,
-      CalendarMinComponent
-      
+      CalendarMinComponent,
+      FixtureComponent
    ],
    imports: [
       BrowserModule,

@@ -10,6 +10,10 @@ export class CalendarMinComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
+
+
   }
 
 }

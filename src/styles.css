@@ -126,6 +126,11 @@ hr {
 .card {
   border: none !important;
 }
+.views .card{
+  max-height: 510px !important;
+  min-height: 510px !important;
+  overflow: hidden;
+}
 
 @media (min-width: 1200px) {
    .container {

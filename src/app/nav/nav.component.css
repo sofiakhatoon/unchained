@@ -11,11 +11,7 @@
    
 }
 .navbar{
-    background-color: #000b20 !important;
-    background-color: transparent !important;
-    position: absolute;
-    width: 100%;
-    z-index: 9999;
+ 
     /*border-bottom:1px solid #000b20 !important;*/
 }
 .navbar-dark .navbar-nav .nav-link{
@@ -35,6 +31,18 @@
     position: relative;
     bottom: -2.1vw;
 }
+.baseMenu{
+    background-color: #000b20 !important;
+    background-color: transparent !important;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+}
+.otherMenu{
+    position: relative !important;
+    background-color:#000209 !important
+}
+
 
 @media (min-width: 768px){
     div#navbarSupportedContent {
