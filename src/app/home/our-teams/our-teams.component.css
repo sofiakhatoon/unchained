@@ -1,0 +1,72 @@
+.backimg{
+height: 100%;
+width: 100%;
+position: absolute;
+transition: all .3s;
+
+}
+.col-sm-6{
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.col-sm-6:nth-child(1) .backimg{
+
+    
+    background: url('../../../assets/ourTeams/1.jpg');
+
+    background-position: center;
+    background-size: cover;
+
+}
+.col-sm-6:nth-child(2) .backimg{
+
+    
+    background: url('../../../assets/ourTeams/2.jpg');
+
+    background-position: center;
+    background-size: cover;
+
+}
+.col-sm-6:nth-child(3) .backimg{
+
+    
+    background: url('../../../assets/ourTeams/3.jpg');
+
+    background-position: center;
+    background-size: cover;
+
+}
+.col-sm-6:nth-child(4) .backimg{
+
+    
+    background: url('../../../assets/ourTeams/4.jpg');
+
+    background-position: center;
+    background-size: cover;
+
+}
+.col-sm-6{
+    height: 34.739583333333336VW;
+}
+.col-sm-6:hover > .backimg{
+    transform: scale(1.2);
+    overflow: hidden;
+}
+
+.row{
+    margin: 0 !important;
+}
+
+h2{
+    POSITION: absolute;
+    /* display: inline-flex; */
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: max-content;
+    width: max-content;
+    font-size: 
+}

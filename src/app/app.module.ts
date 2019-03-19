@@ -15,6 +15,7 @@ import { StreamVideosComponent } from './home/stream-videos/stream-videos.compon
 import { NewsComponent } from './home/news/news.component';
 import { CalendarMinComponent } from './home/news/calendar-min/calendar-min.component';
 import { FixtureComponent } from './fixture/fixture.component';
+import { OurTeamsComponent } from './home/our-teams/our-teams.component';
 
 
 
@@ -36,7 +37,8 @@ import { FixtureComponent } from './fixture/fixture.component';
       NewsComponent,
       AnimateComponent,
       CalendarMinComponent,
-      FixtureComponent
+      FixtureComponent,
+      OurTeamsComponent
    ],
    imports: [
       BrowserModule,

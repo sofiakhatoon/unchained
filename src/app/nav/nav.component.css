@@ -15,15 +15,17 @@
     /*border-bottom:1px solid #000b20 !important;*/
 }
 .navbar-dark .navbar-nav .nav-link{
-    color: #0139a1 ;
+    color: white ;
     font-weight: normal;
-    font-size: 17px;
+    font-size: 18px;
 }
 .navbar-dark .navbar-nav .nav-link:hover{
-    color:white !important;
+    color: #c0c0c0;
+    text-decoration: underline !important;
 }
 .navbar-dark .navbar-nav .nav-link.activeLink{
-    color: white;
+    color: #c0c0c0;
+    text-decoration: underline !important;
 }
 .navbar-expand-lg .navbar-collapse {
   

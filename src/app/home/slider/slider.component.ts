@@ -20,7 +20,7 @@ export class SliderComponent implements OnInit {
 
   }
 
-  images = ['../../../assets/slider/4.jpg','../../../assets/slider/2.jpg','../../../assets/slider/1.jpg'];
+  images = ['../../../assets/slider/10.jpg','../../../assets/slider/4.jpg','../../../assets/slider/2.jpg'];
 
   ngOnInit() {
   }
