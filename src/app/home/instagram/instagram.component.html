@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row" style="margin:0">
+      <div class="col-md-12">
+          <div class="col-md-12 mt-4">
+              <h2>Instagram</h2>
+              <hr />
+          </div>
+        <div class="row mt-2">
+          
+          <div
+            class="col-md-4 col-6 colums"
+            *ngFor="let item of (instagramData | slice: 0:9)"
+          >
+            <div class="myFrame" (click)="gotoIg(item.link)">
+              <img [src]="item.images.standard_resolution.url" />
+              <div class="gotoInstagramText text-center">
+                <i class="fa fa-instagram fa-2x"></i>
+                <br/>
+             
+                <span>VIEW ON INSTAGRAM</span>
+                <br/>
+                <span *ngIf="item.caption">{{item.caption.text | slice:0:150}}</span>
+                <br/>
+                <br/>
+                <span *ngIf="item.likes"> {{item.likes.count}} <i class="fa fa-thumbs-up"></i></span>
+                <span *ngIf="item.comments"> {{item.comments.count}} <i class="fa fa-comments"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+  
+</div>
+
+

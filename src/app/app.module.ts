@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AnimateComponent } from './animate/animate.component';
+import { HttpClientModule } from "@angular/common/http";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,8 +18,10 @@ import { NewsComponent } from './home/news/news.component';
 import { CalendarMinComponent } from './home/news/calendar-min/calendar-min.component';
 import { FixtureComponent } from './fixture/fixture.component';
 import { OurTeamsComponent } from './home/our-teams/our-teams.component';
+import { InstagramComponent } from './home/instagram/instagram.component';
 
-
+import { InstagramService } from './services/instagram.service';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 
@@ -38,15 +42,20 @@ import { OurTeamsComponent } from './home/our-teams/our-teams.component';
       AnimateComponent,
       CalendarMinComponent,
       FixtureComponent,
-      OurTeamsComponent
+      OurTeamsComponent,
+      GalleryComponent,
+      InstagramComponent
    ],
    imports: [
       BrowserModule,
+      HttpClientModule,
       AppRoutingModule,
       NgbModule,
       BrowserAnimationsModule
    ],
-   providers: [],
+   providers: [
+      InstagramService
+   ],
    bootstrap: [
       AppComponent
    ]

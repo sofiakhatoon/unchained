@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { TeamsComponent } from './teams/teams.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FixtureComponent } from './fixture/fixture.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'Teams', component:TeamsComponent },
   { path: 'Calendar', component:CalendarComponent },
   { path: 'Fixture', component:FixtureComponent },
+  { path: 'Gallery', component:GalleryComponent },
   { path: '**', redirectTo: 'Home', pathMatch: 'full' }
 
 ];

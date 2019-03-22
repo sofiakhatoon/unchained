@@ -1,0 +1,80 @@
+.myFrame{
+    overflow: hidden;
+    height: 20vw;
+    width: 100%;
+    cursor: pointer;
+    
+
+}
+.colums.col-md-4{
+margin-bottom: 1vw;
+}
+.myFrame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: relative;
+    transition:all .4s;
+}
+
+.myFrame:hover > img{
+    opacity: 0.2;
+    transform: scale(1.2);
+
+}
+
+.myFrame:hover > .gotoInstagramText{
+display: block;
+top:0 !important ;
+z-index: 9999;
+}
+
+.myFrame .gotoInstagramText{
+    position: absolute;
+    width: 96%;
+    height: 100%;
+    padding: 5%;
+    display: none;
+    color:white;
+    transition:all .4s;
+
+}
+
+
+@media (max-width: 768px ) and (orientation: portrait){
+    .myFrame{
+        overflow: hidden;
+        height: 43vw;
+        width: 100%;
+        cursor: pointer;
+        
+    
+    }
+    .colums.col-md-4:nth-child(2n-1){
+padding-right: 2px !important;
+    }
+    .colums.col-md-4:nth-child(2n){
+        padding-left: 3px !important;
+    }
+}
+
+@media (max-width: 768px ) and (orientation: landscape){
+    .myFrame{
+        overflow: hidden;
+        height: 25vw;
+        width: 100%;
+        cursor: pointer;
+        
+    
+    }
+    .colums.col-md-4{
+        margin-bottom: 5px;
+    }
+    .colums.col-md-4:nth-child(2n-1){
+        padding-right: 2px !important;
+    }
+    .colums.col-md-4:nth-child(2n){
+        padding-left: 3px !important;
+    }
+}
