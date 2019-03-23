@@ -46,7 +46,10 @@
     position: relative !important;
     background-color:#000209 !important
 }
-
+.logo:focus{
+    outline: none !important;
+    border: non !important;
+}
 
 @media (min-width: 768px){
     div#navbarSupportedContent {
@@ -81,6 +84,7 @@
     -webkit-transition: top 2s linear; /* Safari */
     transition: top 2.5s linear;
 }
+
 .logoPosition{
     -webkit-transition: opacity 1s linear; /* Safari */
     transition: opacity 1.5s linear;

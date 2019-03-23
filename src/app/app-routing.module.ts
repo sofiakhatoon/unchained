@@ -5,6 +5,7 @@ import { TeamsComponent } from './teams/teams.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FixtureComponent } from './fixture/fixture.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { PartnersComponent } from './partners/partners.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'Calendar', component:CalendarComponent },
   { path: 'Fixture', component:FixtureComponent },
   { path: 'Gallery', component:GalleryComponent },
+  { path: 'Partners', component:PartnersComponent },
   { path: '**', redirectTo: 'Home', pathMatch: 'full' }
 
 ];

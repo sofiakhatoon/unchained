@@ -1,0 +1,20 @@
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+    transition:all .4s;
+}
+.partnersdiv .col-3{
+    padding: 4% !important;
+    
+}
+.partnersdiv .col-9{
+    padding: 4% 1% !important;
+    
+}
+
+.partnersdiv .row{
+    background: #1d1d1d;
+}

@@ -23,6 +23,7 @@ import { InstagramComponent } from './home/instagram/instagram.component';
 import { InstagramService } from './services/instagram.service';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FooterComponent } from './footer/footer.component';
+import { PartnersComponent } from './partners/partners.component';
 
 
 
@@ -46,7 +47,8 @@ import { FooterComponent } from './footer/footer.component';
       OurTeamsComponent,
       GalleryComponent,
       InstagramComponent,
-      FooterComponent
+      FooterComponent,
+      PartnersComponent
    ],
    imports: [
       BrowserModule,
