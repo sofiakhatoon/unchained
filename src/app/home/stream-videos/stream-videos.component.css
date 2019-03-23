@@ -58,7 +58,7 @@
     cursor: pointer;
 }
 .streams:hover , .videos:hover{
-    color:#0139a1 !important;
+    color:#c0c0c0 !important;
 }
 
 .videoItem{

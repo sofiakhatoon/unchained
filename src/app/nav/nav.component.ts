@@ -2,6 +2,7 @@ import { Component, OnInit, ElementRef } from "@angular/core";
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { RouterService } from '../services/router.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: "app-nav",
@@ -37,7 +38,6 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
-
 
   }
 

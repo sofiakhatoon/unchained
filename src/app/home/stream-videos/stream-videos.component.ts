@@ -33,6 +33,7 @@ export class StreamVideosComponent implements OnInit {
 
   viewStreams(){
     let path=['streams.jpg','streams.jpg','streams.jpg','streams.jpg'];
+ 
     return this.items=path;
   }
   viewVideos(){

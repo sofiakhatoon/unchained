@@ -22,6 +22,7 @@ import { InstagramComponent } from './home/instagram/instagram.component';
 
 import { InstagramService } from './services/instagram.service';
 import { GalleryComponent } from './gallery/gallery.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -44,7 +45,8 @@ import { GalleryComponent } from './gallery/gallery.component';
       FixtureComponent,
       OurTeamsComponent,
       GalleryComponent,
-      InstagramComponent
+      InstagramComponent,
+      FooterComponent
    ],
    imports: [
       BrowserModule,

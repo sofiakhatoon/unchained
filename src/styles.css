@@ -10,9 +10,8 @@ h5 {
 }
 
 body {
-  min-height: 1500px;
   background-color: #171717f0 !important;
-  padding-bottom: 10%;
+
 }
 .card-img-top{
   border-top-left-radius: 0 !important;
