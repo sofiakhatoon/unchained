@@ -14,7 +14,7 @@ ngb-carousel.carousel.slide{
     border:none;
 }
 ngb-carousel{
-    margin-bottom: 2.8%;
+    margin-bottom: -0.2%;
 }
 
 @media (min-width: 768px){

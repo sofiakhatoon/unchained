@@ -1,12 +1,12 @@
 <section class="container streamVideos">
   <br />
   <div class="row">
-    <div class="col-8">
-      <h2><a class="streams" (click)='viewStreams()'>STREAMS</a> / <a class="videos" (click)='viewVideos()' >VIDEOS</a> </h2>
+    <div class="col-sm-8">
+      <h2><a class="streams" id="streamsbtn" (click)='viewStreams()'><span >STREAMS</span></a><a class="videos" id="videosbtn" (click)='viewVideos()' ><span>VIDEOS</span></a> </h2>
     </div>
-    <div class="col-4 text-right">
+    <div class="col-sm-4 text-right">
 
-      <a routerLink='videos' class="moreClick">click for more <i></i> </a>
+      <a routerLink='videos' class="moreClick" routerLink="/{{routeExt}}">click for more <i></i> </a>
     </div>
 
 
@@ -16,7 +16,7 @@
   <hr />
   <div class="row" *ngIf="items" >
 
-    <a routerLink='/videos' class="col-sm-3 videoItem"   *ngFor="let item of items">
+    <a routerLink='/videos' class="col-sm-3 videoItem"   *ngFor="let item of items | slice:0:end">
 
       <div class="card" style="width: 100%;">
 

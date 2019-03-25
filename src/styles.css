@@ -130,6 +130,21 @@ hr {
   min-height: 510px !important;
   overflow: hidden;
 }
+.moreBTN{
+  background: none;
+  border:none;
+  color:white;
+  padding: .5vw;
+  border-top: 1px solid rgb(68, 68, 68);
+  border-bottom: 1px solid rgb(68, 68, 68);
+  outline: none !important;
+  transition: all .5s;
+}
+
+.moreBTN:hover{
+  color:#171717;
+  border-color: black;
+}
 
 @media (min-width: 1200px) {
    .container {

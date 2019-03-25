@@ -24,6 +24,8 @@ import { InstagramService } from './services/instagram.service';
 import { GalleryComponent } from './gallery/gallery.component';
 import { FooterComponent } from './footer/footer.component';
 import { PartnersComponent } from './partners/partners.component';
+import { StreamsComponent } from './streams/streams.component';
+import { VideoComponent } from './video/video.component';
 
 
 
@@ -48,7 +50,9 @@ import { PartnersComponent } from './partners/partners.component';
       GalleryComponent,
       InstagramComponent,
       FooterComponent,
-      PartnersComponent
+      PartnersComponent,
+      StreamsComponent,
+      VideoComponent
    ],
    imports: [
       BrowserModule,

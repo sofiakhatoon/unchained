@@ -8,8 +8,12 @@ import { Title } from '@angular/platform-browser';
 })
 
 export class HomeComponent implements OnInit {
+  videosOrstreams:string;
+  constructor(private titleService: Title,private elRef:ElementRef) { 
 
-  constructor(private titleService: Title,private elRef:ElementRef) { }
+
+  }
+
 
   ngOnInit() {
     this.setTitle("Unchained Home");

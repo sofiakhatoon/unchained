@@ -81,6 +81,9 @@
     width: 31%;
     top: 9px;
     position: absolute;
+    width: 53%;
+    top: 2px;
+    position: relative;
     -webkit-transition: top 2s linear; /* Safari */
     transition: top 2.5s linear;
 }

@@ -6,6 +6,9 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { FixtureComponent } from './fixture/fixture.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PartnersComponent } from './partners/partners.component';
+import { StreamVideosComponent } from './home/stream-videos/stream-videos.component';
+import { StreamsComponent } from './streams/streams.component';
+import { VideoComponent } from './video/video.component';
 
 
 const routes: Routes = [
@@ -15,6 +18,8 @@ const routes: Routes = [
   { path: 'Fixture', component:FixtureComponent },
   { path: 'Gallery', component:GalleryComponent },
   { path: 'Partners', component:PartnersComponent },
+  { path: 'Streams', component:StreamsComponent },
+  { path: 'Videos', component:VideoComponent },
   { path: '**', redirectTo: 'Home', pathMatch: 'full' }
 
 ];
