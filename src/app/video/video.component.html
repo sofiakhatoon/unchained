@@ -1,10 +1,16 @@
-<div class="container mt-3">
+<div class="container videoscontainer mt-3">
     <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-8">
           <h1>Videos</h1>
-          <hr/>
+      
       </div>
-   
+      <div class="col-sm-4 text-right">
+
+        <a routerLink='videos' class="moreClick" routerLink="/Streams">Streams <i></i> </a>
+      </div>
+      <div class="col-sm-12">
+        <hr/>
+      </div>
     </div>
     
       <div class="row" *ngIf="items" >
@@ -27,7 +33,7 @@
         </div>
         <div class="row mt-4 ">
           <div class="col-sm-12 text-center">
-              <button class="moreBTN" (click)="clickMore()"><i class="	fa fa-reorder"></i> More</button>
+              <button class="moreBTN" (click)="clickMore()" *ngIf="moreBTN"><i class="	fa fa-reorder"></i> More</button>
           </div>
          
         </div>

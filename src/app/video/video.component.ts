@@ -8,15 +8,22 @@ import { StreamsComponent } from '../streams/streams.component';
 })
 export class VideoComponent implements OnInit {
 
-  constructor() { }
-  items=['video.jpg','video.jpg','video.jpg'];
+  constructor() { 
+
+
+  }
+  items=['video.jpg','video.jpg','video.jpg','video.jpg','video.jpg','video.jpg','video.jpg','video.jpg','video.jpg'];
   end=8;
+  moreBTN:boolean=false;
 
   ngOnInit() {
- 
+    if(this.items.length>this.end){
+      this.moreBTN=true;
+    }
+
   }
   clickMore(){
     this.end=this.end+8;
-     }
+  }
    
 }

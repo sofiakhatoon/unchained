@@ -149,7 +149,9 @@ img{
     box-shadow: none;
     outline: none;
 }
-
+.streamscontainer {
+    min-height: 35vw;
+}
 @media (min-width: 768px){
 
     .card{

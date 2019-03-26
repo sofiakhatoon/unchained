@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class InstagramService {
 
   instagramPath="https://api.instagram.com/v1/users/self/media/recent/?access_token=";
-  instagramAccesToken="1762506077.a1668fd.af2ef97508bc47d583a00b655874b642";
+  instagramAccesToken="2147749880.ff8db30.3390241b30c94a758f6410c00f099120";
 
 constructor(private httpClient: HttpClient) { }
 
