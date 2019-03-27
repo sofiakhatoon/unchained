@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import { SlidersService } from '../../services/sliders.service';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
@@ -9,7 +10,7 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class SliderComponent implements OnInit {
 
-  constructor(private config:NgbCarouselConfig) { 
+  constructor(private config:NgbCarouselConfig,private sliderService:SlidersService) { 
 
     config.interval=15000;
     config.wrap=true;
@@ -20,9 +21,16 @@ export class SliderComponent implements OnInit {
 
   }
 
-  images = ['../../../assets/slider/10.jpg','../../../assets/slider/4.jpg'];
-
+  items = [];
+  imgPath="../../../assets/slider/";
   ngOnInit() {
+
+   
+    this.sliderService.getSlider().subscribe(data => {
+      this.items=data;
+      console.log(this.items);
+    });
+
   }
 
 }

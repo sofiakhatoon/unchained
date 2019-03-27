@@ -12,21 +12,30 @@ import { NavComponent } from 'src/app/nav/nav.component';
   styleUrls: ['./instagram.component.css']
 })
 export class InstagramComponent implements OnInit {
+  instagramAccesToken:string;
+  constructor(private instagramService:InstagramService) {
 
-  constructor(private instagramService:InstagramService) { }
+ 
+    this.instagramService.getInstagramMyAPI().subscribe(data=>{
+
+      this.instagramAccesToken=data.key;
+      this.instagramService.getInstagramData(this.instagramAccesToken).subscribe(data => {
+      
+        this.instagramData=data.data;
+      }
+      );
+    });
+   
+    
+
+  }
 
   
   instagramData:any;
 
   ngOnInit() {
 
-    this.instagramService.getInstagramData().subscribe(data => {
-   
-      this.instagramData=data.data;
-      console.log(data.data);
-    }
- );
-    
+  
     
 
 

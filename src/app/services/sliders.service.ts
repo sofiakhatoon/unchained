@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+
 import { HttpClient } from '@angular/common/http';
-import { Menu } from '../models/menu';
 import { Globalvariable } from '../app_classes/globalvariable';
+import { Sliders } from '../models/sliders';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class NavService {
+export class SlidersService {
 
   constructor(private httpClient: HttpClient) { }
   path = Globalvariable.apiurl;
 
-  getMenu(): Observable<Menu[]> {
+  getSlider(): Observable<Sliders[]> {
     
-    return this.httpClient.get<Menu[]>(this.path + "menu");
+    return this.httpClient.get<Sliders[]>(this.path + "slider");
    
   }
-
 
 }

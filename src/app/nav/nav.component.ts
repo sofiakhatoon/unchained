@@ -33,7 +33,6 @@ export class NavComponent implements OnInit {
 
     this.navService.getMenu().subscribe(data => {
       this.menuItems = data;
-      console.log(data);
     });
 
 
