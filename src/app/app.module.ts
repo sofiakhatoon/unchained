@@ -26,6 +26,13 @@ import { FooterComponent } from './footer/footer.component';
 import { PartnersComponent } from './partners/partners.component';
 import { StreamsComponent } from './streams/streams.component';
 import { VideoComponent } from './video/video.component';
+import { AdminComponent } from './admin/admin.component';
+import { LoginComponent } from './admin/login/login.component';
+import { OthernavComponent } from './othernav/othernav.component';
+import { FormsModule } from '@angular/forms';
+import { LoginGuard } from './app_classes/login.guard';
+import { AuthService } from './services/auth.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 
 
@@ -52,17 +59,21 @@ import { VideoComponent } from './video/video.component';
       FooterComponent,
       PartnersComponent,
       StreamsComponent,
-      VideoComponent
+      VideoComponent,
+      AdminComponent,
+      LoginComponent,
+      OthernavComponent
    ],
    imports: [
       BrowserModule,
       HttpClientModule,
       AppRoutingModule,
       NgbModule,
-      BrowserAnimationsModule
+      BrowserAnimationsModule,
+      FormsModule
    ],
    providers: [
-      InstagramService
+      InstagramService,LoginGuard,AuthService
    ],
    bootstrap: [
       AppComponent

@@ -10,7 +10,10 @@ import { Observable } from 'rxjs';
 })
 export class SlidersService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+
+    
+  }
   path = Globalvariable.apiurl;
 
   getSlider(): Observable<Sliders[]> {

@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <form  #loginForm="ngForm" (ngSubmit)="login()" class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" name="userName" 
+            [(ngModel)]="loginUser.userName" required type="text" placeholder="User Name">
+            <input class="form-control mr-sm-2" name="password" 
+            [(ngModel)]="loginUser.password" required type="password" placeholder="Password">
+            <button class="btn btn-secondary my-2 my-sm-0" [disabled]="!loginForm.valid"  type="submit">Giriş</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

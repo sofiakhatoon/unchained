@@ -17,7 +17,10 @@ export class SliderComponent implements OnInit {
     config.keyboard=true;
     config.pauseOnHover=true;
     config.showNavigationArrows=false;
-    
+    this.sliderService.getSlider().subscribe(data => {
+      this.items=data;
+      console.log(this.items);
+    });
 
   }
 
@@ -26,10 +29,7 @@ export class SliderComponent implements OnInit {
   ngOnInit() {
 
    
-    this.sliderService.getSlider().subscribe(data => {
-      this.items=data;
-      console.log(this.items);
-    });
+  
 
   }
 
