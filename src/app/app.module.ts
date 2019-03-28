@@ -33,6 +33,8 @@ import { FormsModule } from '@angular/forms';
 import { LoginGuard } from './app_classes/login.guard';
 import { AuthService } from './services/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { LeftsidebarComponent } from './admin/leftsidebar/leftsidebar.component';
+import { StreamsCtrlComponent } from './admin/streams-ctrl/streams-ctrl.component';
 
 
 
@@ -62,7 +64,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
       VideoComponent,
       AdminComponent,
       LoginComponent,
-      OthernavComponent
+      OthernavComponent,
+      LeftsidebarComponent,
+      StreamsCtrlComponent
    ],
    imports: [
       BrowserModule,

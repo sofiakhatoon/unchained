@@ -17,6 +17,7 @@ import { SliderComponent } from './home/slider/slider.component';
 import { InstagramComponent } from './home/instagram/instagram.component';
 import { OthernavComponent } from './othernav/othernav.component';
 import { LoginGuard } from './app_classes/login.guard';
+import { StreamsCtrlComponent } from './admin/streams-ctrl/streams-ctrl.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'Streams', component: NavComponent, children: [{ path: '', component: StreamsComponent }] },
   { path: 'Videos', component: NavComponent,children: [{ path: '', component: VideoComponent }] },
   { path: 'Ctrl', component: OthernavComponent,children: [{ path: '', component: AdminComponent }],canActivate:[LoginGuard] },
+  { path: 'Streams-control', component: OthernavComponent,children: [{ path: '', component:StreamsCtrlComponent }],canActivate:[LoginGuard] },
   {path:'Auth',component:LoginComponent},
   { path: '**', redirectTo: 'Home', pathMatch: 'full' }
 
