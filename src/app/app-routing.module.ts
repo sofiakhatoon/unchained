@@ -18,6 +18,8 @@ import { InstagramComponent } from './home/instagram/instagram.component';
 import { OthernavComponent } from './othernav/othernav.component';
 import { LoginGuard } from './app_classes/login.guard';
 import { StreamsCtrlComponent } from './admin/streams-ctrl/streams-ctrl.component';
+import { VideosCtrlComponent } from './admin/videos-ctrl/videos-ctrl.component';
+import { StreamDetailsComponent } from './home/stream-videos/stream-details/stream-details.component';
 
 
 const routes: Routes = [
@@ -29,8 +31,10 @@ const routes: Routes = [
   { path: 'Partners', component: NavComponent, children: [{ path: '', component: PartnersComponent }] },
   { path: 'Streams', component: NavComponent, children: [{ path: '', component: StreamsComponent }] },
   { path: 'Videos', component: NavComponent,children: [{ path: '', component: VideoComponent }] },
+  { path: 'Streams-Details/:id', component: NavComponent,children: [{ path: '', component: StreamDetailsComponent }] },
   { path: 'Ctrl', component: OthernavComponent,children: [{ path: '', component: AdminComponent }],canActivate:[LoginGuard] },
   { path: 'Streams-control', component: OthernavComponent,children: [{ path: '', component:StreamsCtrlComponent }],canActivate:[LoginGuard] },
+  { path: 'Videos-control', component: OthernavComponent,children: [{ path: '', component:VideosCtrlComponent }],canActivate:[LoginGuard] },
   {path:'Auth',component:LoginComponent},
   { path: '**', redirectTo: 'Home', pathMatch: 'full' }
 

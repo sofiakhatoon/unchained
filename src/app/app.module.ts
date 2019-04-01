@@ -35,6 +35,9 @@ import { AuthService } from './services/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { LeftsidebarComponent } from './admin/leftsidebar/leftsidebar.component';
 import { StreamsCtrlComponent } from './admin/streams-ctrl/streams-ctrl.component';
+import { SafePipe } from './pipe/safe.pipe';
+import { VideosCtrlComponent } from './admin/videos-ctrl/videos-ctrl.component';
+import { StreamDetailsComponent } from './home/stream-videos/stream-details/stream-details.component';
 
 
 
@@ -66,7 +69,10 @@ import { StreamsCtrlComponent } from './admin/streams-ctrl/streams-ctrl.componen
       LoginComponent,
       OthernavComponent,
       LeftsidebarComponent,
-      StreamsCtrlComponent
+      StreamsCtrlComponent,
+      VideosCtrlComponent,
+      StreamDetailsComponent,
+      SafePipe
    ],
    imports: [
       BrowserModule,

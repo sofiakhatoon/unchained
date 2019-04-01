@@ -1,4 +1,4 @@
-
+/*
 .sidebar {
     max-width: 1% !important;
     transition: all .3s;
@@ -18,7 +18,7 @@
     opacity: 1 !important;
     transition: opacity 0.8s;
    
-  }
+  }*/
   /*
    * Sidebar
    */
@@ -75,4 +75,8 @@
 
   .activeLink{
       color: blue !important;
+  }
+  .fa{
+    font-size: 1.5rem;
+    margin-right: 7px;
   }

@@ -16,4 +16,7 @@ export class OthernavComponent implements OnInit {
   logOut(){
     this.authService.logOut();
   }
+  toHome(){
+    location.href='/Home';
+  }
 }

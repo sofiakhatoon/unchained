@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { RouterService } from 'src/app/services/router.service';
+import { StreamsService } from 'src/app/services/streams.service';
+import { VideosService } from 'src/app/services/videos.service';
 
 
 @Component({
@@ -23,12 +25,12 @@ import { RouterService } from 'src/app/services/router.service';
 })
 export class StreamVideosComponent implements OnInit {
 
-  constructor(private routerService:RouterService,private myElement: ElementRef) { 
+  constructor(private routerService:RouterService,private myElement: ElementRef,private streamsService:StreamsService,private videoService:VideosService) { 
   
   }
 
 
-  items = [];
+  items:any = [];
   end=4;
   clickForMoreBTN=true; //click for more button /home
   clickMoreBTN=false; //click for more /streams-videos 
@@ -53,8 +55,12 @@ export class StreamVideosComponent implements OnInit {
     let element:HTMLElement=this.myElement.nativeElement.querySelector("#streamsbtn");
     this.routeExt="Streams";
     element.classList.add("svbuttonbg");
+    this.streamsService.GetStreams().subscribe(data => {
+      this.items=data;
+    });
 
-    return this.items=path;
+
+
   }
   viewVideos(){
     let path=['video.jpg','video.jpg','video.jpg'];
@@ -62,7 +68,12 @@ export class StreamVideosComponent implements OnInit {
     let element:HTMLElement=this.myElement.nativeElement.querySelector("#videosbtn");
     this.routeExt="Videos";
     element.classList.add("svbuttonbg");
-    return this.items=path;
+
+
+    this.videoService.getVideos().subscribe(data => {
+      this.items=data;
+    });
+
   }
 
 

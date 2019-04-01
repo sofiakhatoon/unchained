@@ -16,11 +16,11 @@
   <hr />
   <div class="row" *ngIf="items" >
 
-    <a routerLink='/videos' class="col-sm-3 videoItem"   *ngFor="let item of items | slice:0:end">
+    <a routerLink='/{{routeExt}}-Details/{{item.video_id}}' class="col-sm-3 videoItem"   *ngFor="let item of items | slice:0:end">
 
       <div class="card" style="width: 100%;">
 
-        <img src="../../../assets/img/{{item}}" width="100%" />
+        <img src="../../../assets/img/{{item.video_img_url}}" width="100%" />
 
         <span class="item-video-btn">
 

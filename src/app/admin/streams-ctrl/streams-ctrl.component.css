@@ -1,0 +1,12 @@
+
+
+
+.table th, .table td {
+    padding: 1.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+
+}
+p{
+    word-break: normal;
+}

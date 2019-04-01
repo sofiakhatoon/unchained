@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Globalvariable } from "src/app/app_classes/globalvariable";
 import { AuthService } from "src/app/services/auth.service";
+import { LoginUser } from 'src/app/models/loginUser';
 
 @Component({
   selector: "app-login",
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService) {
     Globalvariable.adminpage = true;
   }
-  loginUser: any = {};
+  loginUser: LoginUser = new LoginUser();
   ngOnInit() {
     document.getElementsByTagName("footer")[0].style.display = "none";
   }

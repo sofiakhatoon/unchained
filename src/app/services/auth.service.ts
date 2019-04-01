@@ -17,6 +17,7 @@ export class AuthService {
   decodedToken: any;
   jwtHelper: JwtHelper = new JwtHelper();
   TOKEN_KEY = "token";
+
   login(loginUser: LoginUser) {
     let headers = new HttpHeaders();
     headers = headers.append("Content-Type", "application/json");
@@ -26,7 +27,7 @@ export class AuthService {
 
       .subscribe(
         data => {
-          console.log(data);
+          //console.log(data);
           this.saveToken(data);
           this.userToken = data;
           this.decodedToken = this.jwtHelper.decodeToken(data.toString());
@@ -40,6 +41,8 @@ export class AuthService {
         }
       );
   }
+
+
   register(registerUser: RegisterUser) {
     let headers = new HttpHeaders();
     headers = headers.append("Content-Type", "application/json");

@@ -1,0 +1,28 @@
+<div class="col-sm-12 text-left mt-4 mb-4">
+        <button class="btn btn-success"> <i class="fa fa-plus fa-2x"></i></button>
+      
+     </div>
+<table class="table  table-hover">
+   <thead class="thead-light">
+      <th scope="col">Title</th>
+      <th style="width: 19%;" scope="col">Embed</th>
+      <th scope="col">Front Pic</th>
+      <th scope="col">Video Kategori (1/2)</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of streams">
+          
+          <td >{{item.video_title}}</td>
+          <td style="width:19%;"  [innerHTML]="item.video_link | safeHtml"></td>
+          <td>{{item.video_img_url}}</td>
+          <td>{{item.video_category}}</td>
+          <td><a (click)='edit(item.video_id)' class="btn btn-warning" style="cursor:pointer" >Edit</a> </td>
+          <td><a (click)='edit(item.video_id)' class="btn btn-danger"  style="cursor:pointer" >Delete</a> </td>
+      </tr>
+  </tbody>
+  
+  
+  </table>
