@@ -1,94 +1,77 @@
 import { Component, OnInit } from '@angular/core';
 import { Fixture } from '../models/fixture';
-import { formatDate } from '@angular/common';
+import { formatDate, DatePipe } from '@angular/common';
 import { element } from '@angular/core/src/render3';
 import { Router } from '@angular/router';
 import { RouterService } from '../services/router.service';
+import { MatchesService } from '../services/matches.service';
 
 @Component({
   selector: 'app-fixture',
   templateUrl: './fixture.component.html',
   styleUrls: ['./fixture.component.css'],
-  providers:[RouterService]
+  providers: [RouterService]
 })
 export class FixtureComponent implements OnInit {
 
-  constructor(private routerService:RouterService) { 
+  constructor(private routerService: RouterService, private matchesService: MatchesService) {
 
     this.resizeFixture();
   }
-  items:Fixture[]=[];
-  littleItem:Fixture[]=[];
-  sliceStart:number=0;
-  sliceEnd:number;
-
-
- 
-
-
+  items: Fixture[] = [];
+  littleItem: Fixture[] = [];
+  sliceStart: number = 0;
+  sliceEnd: number;
 
   ngOnInit() {
-
-
-
-    const item:Fixture={
-      id:1,
-      homeTeam:"Unchained",
-      awayTeam:"Team Example",
-      awayTeamScore:1,
-      homeTeamScore:2,
-      start:"20:30",
-      finish:"21:30",
-      game:0
-
-    };
-    const item2:Fixture={
-      id:1,
-      homeTeam:"Unchained",
-      awayTeam:"Team Example",
-      awayTeamScore:1,
-      homeTeamScore:2,
-      start:"20:30",
-      finish:"21:30",
-      game:1
-
-    };
-    const item3:Fixture={
-      id:1,
-      homeTeam:"Unchained",
-      awayTeam:"Team Example",
-      awayTeamScore:1,
-      homeTeamScore:2,
-      start:"20:30",
-      finish:"21:30",
-      game:1
-
-    };
-    this.items.push(item);
-    this.items.push(item2);
-    this.items.push(item3); 
-    this.items.push(item);
-    this.items.push(item2);
-    this.items.push(item3); 
-    this.items.push(item);
+    this.matchesService.getAllMatches().subscribe(data => {
+ 
+      for(let dataitem of data){
+        let startFullDate=new Date(dataitem.start_time);
+        console.log(startFullDate);
+        let startDate=startFullDate.getUTCDate();
+        let startTime=startFullDate.getHours()+":"+startFullDate.getMinutes();
+        console.log(startTime);
+        const item: Fixture = {
+          id:-1,
+          homeTeam: "Unchained",
+          awayTeam: dataitem.opposing_team_name,
+          awayTeamScore: 1,
+          homeTeamScore: 2,
+          timestamp: dataitem.start_time ,
+          game: 0
     
+        };
+        this.items.push(item);
+    
+      }
+
+
+      console.log(data);
+    });
+
+
+
+
+
+
+
   }
-  resizeFixture(){
-    this.routerService.getNavigationEndUrl().subscribe(x=> 
-      {
-       console.log( x.url);  
-       if(x.url.toLocaleLowerCase().includes('/home') || x.url.toLocaleLowerCase()=='/' ){
-       this.sliceEnd=5;
-      }else{
-        this.sliceEnd=30;
+  resizeFixture() {
+    this.routerService.getNavigationEndUrl().subscribe(x => {
+      console.log(x.url);
+      if (x.url.toLocaleLowerCase().includes('/home') || x.url.toLocaleLowerCase() == '/') {
+        this.sliceEnd = 5;
+      } else {
+        this.sliceEnd = 500;
       }
       console.log(this.sliceEnd);
 
 
 
-      }
-      
-   );
+    }
+
+    );
   }
 
 }

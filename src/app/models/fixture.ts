@@ -8,8 +8,7 @@ export class Fixture {
     awayTeam:string;
     homeTeamScore:number;
     awayTeamScore:number;
-    start:string;
-    finish:string;
+    timestamp:number;
     game:number;
 
 

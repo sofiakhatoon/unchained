@@ -58,13 +58,13 @@
       </div>
       <div class="col-3">
         <ul>
-          <li>
-              {{item.start}}
-          </li>
-          <li>
-              {{item.finish}}
-          </li>
+          <li>{{item.timestamp*1000 | date: 'H:MM'}}
 
+          </li>
+    
+          <li style="color:rgb(92, 91, 91)">
+            {{item.timestamp*1000 | date: 'MM-dd-yy'}}
+          </li>
         </ul>
       </div>
 
