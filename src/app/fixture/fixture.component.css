@@ -93,7 +93,7 @@
     background: #242424;
   }
   .card-body .row:nth-last-child(1){
-    margin-bottom: 5% !important;
+    margin-bottom: 2% !important;
   }
 
   .card-body li{
@@ -106,12 +106,13 @@
 
   }
   .card-body .fixtureHead{
-    margin-top: 1%;
+    margin-bottom: 1% ;
+    margin-top: 1% ;
   }
   .card-body span{
     color:#8c8c8c;
   }
-  .card-body .row:hover{
+  .card-body .match:hover{
     cursor: pointer;
     outline: 1px #8c8c8c solid;
   }
@@ -142,3 +143,55 @@ display: block;
   box-shadow: none;
  
   }
+  li{
+    list-style: none;
+  }
+ img{
+    width: 100%;
+    
+  }
+  .marginzero{
+    margin: 0 !important;
+  }
+ .spanposition span{
+   position: relative;
+   top: 36%;
+ }
+ .spanpositionNot span{
+  position: relative;
+  top: 0%;
+ }
+ .match{
+  padding: 1% 0;
+ }
+ .card{
+   overflow: hidden;
+ }
+ .card-body{
+  overflow: auto;
+ }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background:transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+::-webkit-scrollbar-track-piece {
+  background:transparent;
+
+}

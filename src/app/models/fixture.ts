@@ -3,13 +3,20 @@ import { Data } from '@angular/router';
 export class Fixture {
 
 
-    id:number;
-    homeTeam:string;
-    awayTeam:string;
-    homeTeamScore:number;
-    awayTeamScore:number;
+    radiantTeam:string;
+    direTeam:string;
+    matchid:number;
     timestamp:number;
     game:number;
+    radiantScore:number;
+    direScore:number;
+    direTag:string;
+    radiantTag:string;
+    radiantIconPath:string;
+    direIconPath:string;
+    result:string;
+    resultStyle:string;
+
 
 
 }

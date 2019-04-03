@@ -26,7 +26,6 @@ const routes: Routes = [
   { path: 'Home', component: HomeComponent},
   { path: 'Teams', component: NavComponent, children: [{ path: '', component: TeamsComponent }] },
   { path: 'Calendar', component: CalendarComponent },
-  { path: 'Fixture', component: NavComponent,children: [{ path: '', component: FixtureComponent }] },
   { path: 'Gallery', component: NavComponent, children: [{ path: '', component: GalleryComponent }] },
   { path: 'Partners', component: NavComponent, children: [{ path: '', component: PartnersComponent }] },
   { path: 'Streams', component: NavComponent, children: [{ path: '', component: StreamsComponent }] },

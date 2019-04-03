@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Fixture } from '../models/fixture';
 import { formatDate, DatePipe } from '@angular/common';
 import { element } from '@angular/core/src/render3';
 import { Router } from '@angular/router';
 import { RouterService } from '../services/router.service';
 import { MatchesService } from '../services/matches.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-fixture',
@@ -13,65 +14,134 @@ import { MatchesService } from '../services/matches.service';
   providers: [RouterService]
 })
 export class FixtureComponent implements OnInit {
-
-  constructor(private routerService: RouterService, private matchesService: MatchesService) {
-
-    this.resizeFixture();
-  }
   items: Fixture[] = [];
   littleItem: Fixture[] = [];
   sliceStart: number = 0;
   sliceEnd: number;
+  direScore: number = -1;
+  radiantScore: number = -1;
+  radiantTeam: string = "NULL-";
+  direTeam: string = "NULL-";
+  direTag: string;
+  radiantTag: string;
+  url: string;
+  direIconPath: string;
+  radiantIconPath: string;
+  result: string;
+  resultColorStyle:string;
+  radiantWin:boolean;
 
-  ngOnInit() {
+  spanpositiondiv: HTMLElement;
+
+  constructor(private routerService: RouterService, private matchesService: MatchesService, private httpClient: HttpClient, private mydoc: ElementRef) {
+
+    this.resizeFixture();
     this.matchesService.getAllMatches().subscribe(data => {
- 
-      for(let dataitem of data){
-        let startFullDate=new Date(dataitem.start_time);
-        console.log(startFullDate);
-        let startDate=startFullDate.getUTCDate();
-        let startTime=startFullDate.getHours()+":"+startFullDate.getMinutes();
-        console.log(startTime);
-        const item: Fixture = {
-          id:-1,
-          homeTeam: "Unchained",
-          awayTeam: dataitem.opposing_team_name,
-          awayTeamScore: 1,
-          homeTeamScore: 2,
-          timestamp: dataitem.start_time ,
-          game: 0
-    
-        };
-        this.items.push(item);
-    
+
+      for (let dataitem of data) {
+
+
+        this.matchesService.getMatchesById(dataitem.match_id).subscribe(x => {
+
+          //console.log(x);
+          this.radiantScore = x.radiant_score;
+          this.direScore = x.dire_score;
+          this.direTeam = x.dire_team.name;
+          this.radiantTeam = x.radiant_team.name;
+
+          this.radiantIconPath = x.radiant_team.logo_url;
+
+          this.direIconPath = x.dire_team.logo_url;
+          this.radiantWin=x.radiant_win;
+
+          if (this.radiantIconPath && this.direIconPath) {
+            if (this.radiantIconPath.includes('928186499951903512')) {
+              this.radiantIconPath = "../assets/img/logo.png";
+
+            } else if (this.direIconPath.includes('928186499951903512')) {
+              this.direIconPath = "../assets/img/logo.png";
+            }
+          }
+
+
+          if (this.url.toLocaleLowerCase().includes('/home') || this.url.toLocaleLowerCase() == '/') {
+            this.radiantTag = x.radiant_team.tag;
+            this.direTag = x.dire_team.tag;
+
+          } else {
+            this.radiantTag = x.radiant_team.name;
+            this.direTag = x.dire_team.name;
+          }
+
+
+          if ((this.radiantTag.toLocaleLowerCase().includes("unc") || this.radiantTag.toLocaleLowerCase().includes("unchained team") ) && this.radiantWin ) {
+            this.result="<span style='color:green'>Won Match</span>";
+          }
+          else if ((this.direTag.toLocaleLowerCase().includes("unc") || this.radiantTag.toLocaleLowerCase().includes("unchained team")) &&  !this.radiantWin) {
+            this.result="<span style='color:red'>Lost Match</span>";
+         
+          }
+
+
+          const item: Fixture = {
+
+            matchid: x.match_id,
+            radiantTeam: this.radiantTeam,
+            direTeam: this.direTeam,
+            direTag: this.direTag,
+            radiantTag: this.radiantTag,
+            radiantScore: this.radiantScore,
+            direScore: this.direScore,
+            timestamp: dataitem.start_time,
+            radiantIconPath: this.radiantIconPath,
+            direIconPath: this.direIconPath,
+            game: 0,
+            resultStyle:this.resultColorStyle,
+            result: this.result
+
+          };
+          this.items.push(item);
+          //order by desc by datetime
+          this.items.sort((val1, val2) => {
+            return <any>new Date(val2.timestamp) - <any>new Date(val1.timestamp);
+          });
+
+
+          //-----
+          //console.log(x);
+        });
       }
-
-
       console.log(data);
     });
 
 
+  }
 
-
+  ngOnInit() {
 
 
 
   }
   resizeFixture() {
     this.routerService.getNavigationEndUrl().subscribe(x => {
-      console.log(x.url);
+      this.url = x.url;
       if (x.url.toLocaleLowerCase().includes('/home') || x.url.toLocaleLowerCase() == '/') {
-        this.sliceEnd = 5;
+        this.sliceEnd = 50;
+
+
       } else {
         this.sliceEnd = 500;
+        let fixturecard: HTMLElement = this.mydoc.nativeElement.querySelector(".card");
+        fixturecard.classList.add("container");
+        let footer: HTMLElement = this.mydoc.nativeElement.querySelector(".card-footer");
+        footer.style.display = "none";
+
       }
-      console.log(this.sliceEnd);
-
-
-
     }
 
     );
   }
+
+
 
 }

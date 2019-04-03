@@ -4,78 +4,80 @@
       <h3 class="text-center">Fixture</h3>
     </header>
 
-    <ul>
+    <ul *ngIf="games>0">
       <li class="text-center"><a><i class="fa fa-500px fa-3x"></i></a></li>
       <li class="text-center"><a><i class="fa fa-adn fa-3x"></i></a></li>
       <li class="text-center"><a><i class="fa fa-500px fa-3x"></i></a></li>
       <li class="text-center"><a><i class="fa fa-adn fa-3x"></i></a></li>
     </ul>
   </div>
-  <div class="card-body">
+  <div class="card-body ">
 
     <div class="row fixtureHead text-left">
-      <div class="col-1">
+      <div class="col-2">
         <span></span>
       </div>
-      <div class="col-5">
+      <div class="col-3">
         <span>Teams</span>
       </div>
-      <div class="col-3">
-        <span>Score</span>
+      <div class="col-2">
+        <span>Kill</span>
       </div>
-      <div class="col-3">
-        <span>Date</span>
+      <div class="col-5">
+        <span>Date&Result</span>
       </div>
     </div>
 
 
-    <div class="row text-left" *ngFor="let item of items | slice:sliceStart:sliceEnd" >
-      <div class="col-1">
-        
+    <div class="row match text-left " *ngFor="let item of items | slice:sliceStart:sliceEnd" >
+      <div class="col-sm-12">
+        <div class="row marginzero">
+            <div class="col-2">
+                <img src="{{item.radiantIconPath}}" >
+            </div>
+            <div class="col-3" >
+              <span title="{{item.radiantTeam}}">
+                    {{item.radiantTag}}
+                </span>
+            </div>
+            <div class="col-2" >
+                <span title="{{item.radiantTeam}}">
+                      {{item.radiantScore}}
+                  </span>
+              </div>
+              <div class="col-5"  [innerHtml]="item.result | safeHtml">
+           
+                </div>
+        </div>
+       
       </div>
-      <div class="col-5"  >
-
-        <ul>
-          <li>
-            {{item.homeTeam}}
-          </li>
-          <li>
-            {{item.awayTeam}}
-          </li>
-        </ul>
-
-      </div>
-      <div class="col-3">
-
-        <ul>
-          <li>
-            {{item.homeTeamScore}}
-          </li>
-          <li>
-              {{item.awayTeamScore}}
-          </li>
-        </ul>
-      </div>
-      <div class="col-3">
-        <ul>
-          <li>{{item.timestamp*1000 | date: 'H:MM'}}
-
-          </li>
-    
-          <li style="color:rgb(92, 91, 91)">
-            {{item.timestamp*1000 | date: 'MM-dd-yy'}}
-          </li>
-        </ul>
+      <div class="col-sm-12">
+          <div class="row marginzero">
+              <div class="col-2">
+                  <img src="{{item.direIconPath}}" >
+              </div>
+              <div class="col-3" >
+                <span title="{{item.direTeam}}">
+                      {{item.direTag}}
+                  </span>
+              </div>
+              <div class="col-2" >
+                  <span title="{{item.direTeam}}">
+                        {{item.direScore}}
+                    </span>
+                </div>
+                <div class="col-5" >
+                    <span title="{{item.radiantTeam}}">
+                        {{item.timestamp*1000 | date: 'd MMM y'}}
+                      </span>
+                  </div>
+          </div>
       </div>
 
     </div>
 
     <div class="card-footer">
        
-            <button class="btn btn-primary moreMatches" routerLink="/Fixture"> <span>More Matches <i class="fa fa-angle-double-right" style="margin-bottom:-5px;"></i></span></button>
-    
-      
-
-
+       
     </div>
   </div>
