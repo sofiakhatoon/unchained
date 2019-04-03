@@ -33,7 +33,7 @@
       <div class="col-sm-12">
         <div class="row marginzero">
             <div class="col-2">
-                <img src="{{item.radiantIconPath}}" >
+                <img [src]="item.radiantIconPath | iconControl" [alt]="item.radiantTeam" [title]="item.radiantTeam"  >
             </div>
             <div class="col-3" >
               <span title="{{item.radiantTeam}}">
@@ -54,7 +54,7 @@
       <div class="col-sm-12">
           <div class="row marginzero">
               <div class="col-2">
-                  <img src="{{item.direIconPath}}" >
+                  <img [src]="item.direIconPath | iconControl" [alt]="item.direTeam" [title]="item.direTeam" >
               </div>
               <div class="col-3" >
                 <span title="{{item.direTeam}}">
@@ -62,7 +62,7 @@
                   </span>
               </div>
               <div class="col-2" >
-                  <span title="{{item.direTeam}}">
+                  <span title="{{item.dire_team_id}}">
                         {{item.direScore}}
                     </span>
                 </div>

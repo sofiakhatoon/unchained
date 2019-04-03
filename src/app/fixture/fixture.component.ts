@@ -1,16 +1,16 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { Fixture } from '../models/fixture';
-import { formatDate, DatePipe } from '@angular/common';
-import { element } from '@angular/core/src/render3';
-import { Router } from '@angular/router';
-import { RouterService } from '../services/router.service';
-import { MatchesService } from '../services/matches.service';
-import { HttpClient } from '@angular/common/http';
+import { Component, OnInit, ElementRef } from "@angular/core";
+import { Fixture } from "../models/fixture";
+import { formatDate, DatePipe } from "@angular/common";
+import { element } from "@angular/core/src/render3";
+import { Router } from "@angular/router";
+import { RouterService } from "../services/router.service";
+import { MatchesService } from "../services/matches.service";
+import { HttpClient } from "@angular/common/http";
 
 @Component({
-  selector: 'app-fixture',
-  templateUrl: './fixture.component.html',
-  styleUrls: ['./fixture.component.css'],
+  selector: "app-fixture",
+  templateUrl: "./fixture.component.html",
+  styleUrls: ["./fixture.component.css"],
   providers: [RouterService]
 })
 export class FixtureComponent implements OnInit {
@@ -28,20 +28,37 @@ export class FixtureComponent implements OnInit {
   direIconPath: string;
   radiantIconPath: string;
   result: string;
-  resultColorStyle:string;
-  radiantWin:boolean;
+  resultColorStyle: string;
+  radiantWin: boolean;
+  radiant: boolean;
 
   spanpositiondiv: HTMLElement;
 
-  constructor(private routerService: RouterService, private matchesService: MatchesService, private httpClient: HttpClient, private mydoc: ElementRef) {
-
+  constructor(
+    private routerService: RouterService,
+    private matchesService: MatchesService,
+    private httpClient: HttpClient,
+    private mydoc: ElementRef
+  ) {
     this.resizeFixture();
     this.matchesService.getAllMatches().subscribe(data => {
-
       for (let dataitem of data) {
-
-
         this.matchesService.getMatchesById(dataitem.match_id).subscribe(x => {
+          this.radiant = dataitem.radiant;
+          this.radiantWin = dataitem.radiant_win;
+
+          if (this.radiant && this.radiantWin) {
+            this.result = "<span style='color:green'>Won Match</span>";
+          }
+          if (this.radiant && !this.radiantWin) {
+            this.result = "<span style='color:red'>Lost Match</span>";
+          }
+          if (!this.radiant && !this.radiantWin) {
+            this.result = "<span style='color:green'>Won Match</span>";
+          }
+          if (!this.radiant && this.radiantWin) {
+            this.result = "<span style='color:red'>Lost Match</span>";
+          }
 
           //console.log(x);
           this.radiantScore = x.radiant_score;
@@ -52,39 +69,21 @@ export class FixtureComponent implements OnInit {
           this.radiantIconPath = x.radiant_team.logo_url;
 
           this.direIconPath = x.dire_team.logo_url;
-          this.radiantWin=x.radiant_win;
+          this.radiantWin = x.radiant_win;
+          this.radiant = x.radiant;
 
-          if (this.radiantIconPath && this.direIconPath) {
-            if (this.radiantIconPath.includes('928186499951903512')) {
+          this.radiantTag = x.radiant_team.tag;
+          this.direTag = x.dire_team.tag;
+
+         
+            if (this.radiantTag.toLocaleLowerCase().includes("unc")) {
               this.radiantIconPath = "../assets/img/logo.png";
-
-            } else if (this.direIconPath.includes('928186499951903512')) {
+            } else if (this.direTag.toLocaleLowerCase().includes("unc")) {
               this.direIconPath = "../assets/img/logo.png";
             }
-          }
-
-
-          if (this.url.toLocaleLowerCase().includes('/home') || this.url.toLocaleLowerCase() == '/') {
-            this.radiantTag = x.radiant_team.tag;
-            this.direTag = x.dire_team.tag;
-
-          } else {
-            this.radiantTag = x.radiant_team.name;
-            this.direTag = x.dire_team.name;
-          }
-
-
-          if ((this.radiantTag.toLocaleLowerCase().includes("unc") || this.radiantTag.toLocaleLowerCase().includes("unchained team") ) && this.radiantWin ) {
-            this.result="<span style='color:green'>Won Match</span>";
-          }
-          else if ((this.direTag.toLocaleLowerCase().includes("unc") || this.radiantTag.toLocaleLowerCase().includes("unchained team")) &&  !this.radiantWin) {
-            this.result="<span style='color:red'>Lost Match</span>";
          
-          }
-
 
           const item: Fixture = {
-
             matchid: x.match_id,
             radiantTeam: this.radiantTeam,
             direTeam: this.direTeam,
@@ -96,52 +95,45 @@ export class FixtureComponent implements OnInit {
             radiantIconPath: this.radiantIconPath,
             direIconPath: this.direIconPath,
             game: 0,
-            resultStyle:this.resultColorStyle,
+            resultStyle: this.resultColorStyle,
             result: this.result
-
           };
           this.items.push(item);
           //order by desc by datetime
           this.items.sort((val1, val2) => {
-            return <any>new Date(val2.timestamp) - <any>new Date(val1.timestamp);
+            return (
+              <any>new Date(val2.timestamp) - <any>new Date(val1.timestamp)
+            );
           });
-
 
           //-----
           //console.log(x);
         });
       }
-      console.log(data);
+      //console.log(data);
     });
-
-
   }
 
-  ngOnInit() {
-
-
-
-  }
+  ngOnInit() {}
   resizeFixture() {
     this.routerService.getNavigationEndUrl().subscribe(x => {
       this.url = x.url;
-      if (x.url.toLocaleLowerCase().includes('/home') || x.url.toLocaleLowerCase() == '/') {
+      if (
+        x.url.toLocaleLowerCase().includes("/home") ||
+        x.url.toLocaleLowerCase() == "/"
+      ) {
         this.sliceEnd = 50;
-
-
       } else {
         this.sliceEnd = 500;
-        let fixturecard: HTMLElement = this.mydoc.nativeElement.querySelector(".card");
+        let fixturecard: HTMLElement = this.mydoc.nativeElement.querySelector(
+          ".card"
+        );
         fixturecard.classList.add("container");
-        let footer: HTMLElement = this.mydoc.nativeElement.querySelector(".card-footer");
+        let footer: HTMLElement = this.mydoc.nativeElement.querySelector(
+          ".card-footer"
+        );
         footer.style.display = "none";
-
       }
-    }
-
-    );
+    });
   }
-
-
-
 }

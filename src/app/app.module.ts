@@ -38,6 +38,7 @@ import { StreamsCtrlComponent } from './admin/streams-ctrl/streams-ctrl.componen
 import { SafePipe } from './pipe/safe.pipe';
 import { VideosCtrlComponent } from './admin/videos-ctrl/videos-ctrl.component';
 import { StreamDetailsComponent } from './home/stream-videos/stream-details/stream-details.component';
+import { IconControlPipe } from './pipe/iconControl.pipe';
 
 
 
@@ -72,7 +73,8 @@ import { StreamDetailsComponent } from './home/stream-videos/stream-details/stre
       StreamsCtrlComponent,
       VideosCtrlComponent,
       StreamDetailsComponent,
-      SafePipe
+      SafePipe,
+      IconControlPipe
    ],
    imports: [
       BrowserModule,

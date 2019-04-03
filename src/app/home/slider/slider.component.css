@@ -23,4 +23,14 @@ ngb-carousel{
             text-align: left;
             bottom: 20%;
     }
+
+}
+@media (max-width: 768px){
+
+   
+    img{
+        width: 200%;
+        position: relative;
+        left: -50%;
+    }
 }
