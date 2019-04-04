@@ -14,10 +14,10 @@
   <div class="card-body ">
 
     <div class="row fixtureHead text-center">
-        <div class="col-8">
+        <div class="col-7">
             <span>Tournament</span>
           </div>
-      <div class="col-2">
+      <div class="col-3">
         <span>Date</span>
       </div>
       <div class="col-2">
@@ -30,15 +30,20 @@
 
 
     <div class="row match text-center" *ngFor="let item of items"  >
-        <div class="col-8">
-            <span>{{item.achievement_tournament}}</span>
+        <div class="col-7">
+            <span><img src="../../assets/img/Chongqing_Major_2019_icon.png" style="width:7%;"> &nbsp;{{item.achievement_tournament}}</span>
             
           </div>
-      <div class="col-2">
-        <span>2019 /03/12</span>
-      </div>
-      <div class="col-2">
-        <span>1st</span>
+      <div class="col-3">
+        <div class="mpt">
+            <span class="" [innerHtml]="item.achievement_date | date: 'yyyy'"></span><br/>
+            <span class="" [innerHtml]="item.achievement_date | date: 'MM-dd'"></span>
+
+        </div>
+
+         </div>
+      <div class="col-2 placediv" >
+        <span class="mpt" >{{item.achievement_place}}th</span>
       </div>
     
   
