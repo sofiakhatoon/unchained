@@ -48,16 +48,16 @@ export class FixtureComponent implements OnInit {
           this.radiantWin = dataitem.radiant_win;
 
           if (this.radiant && this.radiantWin) {
-            this.result = "<span style='color:green'>Won Match</span>";
+            this.result = "<span style='color:#0cb80c'>Won Match</span>";
           }
           if (this.radiant && !this.radiantWin) {
-            this.result = "<span style='color:red'>Lost Match</span>";
+            this.result = "<span style='color:#a04f4f'>Lost Match</span>";
           }
           if (!this.radiant && !this.radiantWin) {
-            this.result = "<span style='color:green'>Won Match</span>";
+            this.result = "<span style='color:#0cb80c'>Won Match</span>";
           }
           if (!this.radiant && this.radiantWin) {
-            this.result = "<span style='color:red'>Lost Match</span>";
+            this.result = "<span style='color:#a04f4f'>Lost Match</span>";
           }
 
           //console.log(x);

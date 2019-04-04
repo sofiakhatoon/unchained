@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { TeamsComponent } from './teams/teams.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { FixtureComponent } from './fixture/fixture.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { PartnersComponent } from './partners/partners.component';
@@ -25,7 +24,6 @@ import { StreamDetailsComponent } from './home/stream-videos/stream-details/stre
 const routes: Routes = [
   { path: 'Home', component: HomeComponent},
   { path: 'Teams', component: NavComponent, children: [{ path: '', component: TeamsComponent }] },
-  { path: 'Calendar', component: CalendarComponent },
   { path: 'Gallery', component: NavComponent, children: [{ path: '', component: GalleryComponent }] },
   { path: 'Partners', component: NavComponent, children: [{ path: '', component: PartnersComponent }] },
   { path: 'Streams', component: NavComponent, children: [{ path: '', component: StreamsComponent }] },

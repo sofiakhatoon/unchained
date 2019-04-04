@@ -12,7 +12,6 @@ import { SliderComponent } from './home/slider/slider.component';
 import { NavComponent } from './nav/nav.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { TeamsComponent } from './teams/teams.component';
-import { CalendarComponent } from './calendar/calendar.component';
 import { StreamVideosComponent } from './home/stream-videos/stream-videos.component';
 import { NewsComponent } from './home/news/news.component';
 import { CalendarMinComponent } from './home/news/calendar-min/calendar-min.component';
@@ -39,6 +38,7 @@ import { SafePipe } from './pipe/safe.pipe';
 import { VideosCtrlComponent } from './admin/videos-ctrl/videos-ctrl.component';
 import { StreamDetailsComponent } from './home/stream-videos/stream-details/stream-details.component';
 import { IconControlPipe } from './pipe/iconControl.pipe';
+import { AchievementsComponent } from './achievements/achievements.component';
 
 
 
@@ -53,7 +53,6 @@ import { IconControlPipe } from './pipe/iconControl.pipe';
       NavComponent,
       TeamsComponent,
       TeamsComponent,
-      CalendarComponent,
       StreamVideosComponent,
       NewsComponent,
       AnimateComponent,
@@ -74,7 +73,8 @@ import { IconControlPipe } from './pipe/iconControl.pipe';
       VideosCtrlComponent,
       StreamDetailsComponent,
       SafePipe,
-      IconControlPipe
+      IconControlPipe,
+      AchievementsComponent
    ],
    imports: [
       BrowserModule,
@@ -85,7 +85,9 @@ import { IconControlPipe } from './pipe/iconControl.pipe';
       FormsModule
    ],
    providers: [
-      InstagramService,LoginGuard,AuthService
+      InstagramService,
+      LoginGuard,
+      AuthService
    ],
    bootstrap: [
       AppComponent

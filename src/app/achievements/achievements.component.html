@@ -1,0 +1,47 @@
+<div class="card" style="width: 100%;">
+  <div class="card-header">
+    <header>
+      <h3 class="text-center">Achievements</h3>
+    </header>
+
+    <ul *ngIf="games>0">
+      <li class="text-center"><a><i class="fa fa-500px fa-3x"></i></a></li>
+      <li class="text-center"><a><i class="fa fa-adn fa-3x"></i></a></li>
+      <li class="text-center"><a><i class="fa fa-500px fa-3x"></i></a></li>
+      <li class="text-center"><a><i class="fa fa-adn fa-3x"></i></a></li>
+    </ul>
+  </div>
+  <div class="card-body ">
+
+    <div class="row fixtureHead text-center">
+        <div class="col-8">
+            <span>Tournament</span>
+          </div>
+      <div class="col-2">
+        <span>Date</span>
+      </div>
+      <div class="col-2">
+        <span>Place</span>
+      </div>
+    
+  
+     
+    </div>
+
+
+    <div class="row match text-center" *ngFor="let item of items"  >
+        <div class="col-8">
+            <span>{{item.achievement_tournament}}</span>
+          </div>
+      <div class="col-2">
+        <span>2019 <br/> 03/12</span>
+      </div>
+      <div class="col-2">
+        <span>1st</span>
+      </div>
+    
+  
+
+    </div>
+
+  </div>
