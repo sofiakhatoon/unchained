@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Globalvariable } from '../app_classes/globalvariable';
+import { Games } from '../models/games';
 import { Observable } from 'rxjs';
-import { Achievements } from '../models/achievements';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AchievementsService {
+export class GamesService {
 
   constructor(private httpClient: HttpClient) { }
   path = Globalvariable.apiurl;
 
-  getAchievements(gameid:number): Observable<Achievements[]> {
+  getGames(): Observable<Games[]> {
      
-    return this.httpClient.get<Achievements[]>(this.path + "achievements/"+gameid);
+    return this.httpClient.get<Games[]>(this.path + "Games");
    
   }
 

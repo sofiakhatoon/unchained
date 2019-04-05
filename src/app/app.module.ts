@@ -39,6 +39,11 @@ import { VideosCtrlComponent } from './admin/videos-ctrl/videos-ctrl.component';
 import { StreamDetailsComponent } from './home/stream-videos/stream-details/stream-details.component';
 import { IconControlPipe } from './pipe/iconControl.pipe';
 import { AchievementsComponent } from './achievements/achievements.component';
+import { AchievementsCtrlComponent } from './admin/achievements-ctrl/achievements-ctrl.component';
+import { AchievementsSearchPipe } from './pipe/AchievementsSearch.pipe';
+import { AchievementsFilterByDatePipe } from './pipe/achievementsFilterByDate.pipe';
+import { AchievementsFilterByPrizePipe } from './pipe/achievementsFilterByPrize.pipe';
+import { ModalComponent } from './admin/modal/modal.component';
 
 
 
@@ -72,9 +77,16 @@ import { AchievementsComponent } from './achievements/achievements.component';
       StreamsCtrlComponent,
       VideosCtrlComponent,
       StreamDetailsComponent,
+      AchievementsComponent,
+      AchievementsCtrlComponent,
+      ModalComponent,
+
+
       SafePipe,
       IconControlPipe,
-      AchievementsComponent
+      AchievementsSearchPipe,
+      AchievementsFilterByDatePipe,
+      AchievementsFilterByPrizePipe
    ],
    imports: [
       BrowserModule,

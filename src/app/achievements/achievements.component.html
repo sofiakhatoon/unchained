@@ -4,23 +4,22 @@
       <h3 class="text-center">Achievements</h3>
     </header>
 
-    <ul *ngIf="games>0">
-      <li class="text-center"><a><i class="fa fa-500px fa-3x"></i></a></li>
-      <li class="text-center"><a><i class="fa fa-adn fa-3x"></i></a></li>
-      <li class="text-center"><a><i class="fa fa-500px fa-3x"></i></a></li>
-      <li class="text-center"><a><i class="fa fa-adn fa-3x"></i></a></li>
+    <ul  *ngIf="games.length>1">
+      <li class="text-center" (click)="getArchByGameId(item.game_id)" *ngFor="let item of games"><a><img src="../../assets/games/{{item.game_img_url}}"></a></li>
     </ul>
+
+    
   </div>
   <div class="card-body ">
 
-    <div class="row fixtureHead text-center">
-        <div class="col-7">
+    <div class="row fixtureHead text-left">
+        <div class="col-6 tournamentHead" >
             <span>Tournament</span>
           </div>
-      <div class="col-3">
+      <div class="col-3 dateHead" >
         <span>Date</span>
       </div>
-      <div class="col-2">
+      <div class="col-3 placeHead text-center"  >
         <span>Place</span>
       </div>
     
@@ -29,20 +28,19 @@
     </div>
 
 
-    <div class="row match text-center" *ngFor="let item of items"  >
-        <div class="col-7">
+    <div class="row match text-left" *ngFor="let item of items"  >
+        <div class="col-6 tournamentname" >
             <span><img src="../../assets/achievements/{{item.achievement_imgurl}}" style="width:13%;"> &nbsp;{{item.achievement_tournament}}</span>
             
           </div>
-      <div class="col-3">
+      <div class="col-3 text-left" >
         <div class="mpt">
             <span class="" [innerHtml]="item.achievement_date | date: 'yyyy'"></span><br/>
-            <span class="" [innerHtml]="item.achievement_date | date: 'MM-dd'"></span>
-
+            <span class="" [innerHtml]="item.achievement_date | date: 'MM/dd'"></span>
         </div>
 
          </div>
-      <div class="col-2 placediv" >
+      <div class="col-3 placediv text-center"  >
         <span class="mpt" >{{item.achievement_place}}th</span>
       </div>
     

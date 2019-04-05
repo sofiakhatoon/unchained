@@ -22,6 +22,7 @@ export class InstagramComponent implements OnInit {
       this.instagramService.getInstagramData(this.instagramAccesToken).subscribe(data => {
       
         this.instagramData=data.data;
+        console.log(data);
       }
       );
     });

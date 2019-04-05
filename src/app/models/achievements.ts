@@ -1,4 +1,4 @@
-export class Archievements {
+export class Achievements {
 
 
     achievement_date:Date;

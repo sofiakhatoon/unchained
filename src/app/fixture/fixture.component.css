@@ -185,7 +185,7 @@ display: block;
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+ background: rgb(49, 49, 49); 
 
 }
 

@@ -21,11 +21,13 @@
   
   .card-header  ul {
     list-style: none;
-    padding: 0 0 0.6rem 0;
+    padding: 0 0 0 0;
+    margin: 0 ;
+    overflow: hidden;
   }
  .card-header ul li {
     float: left;
-    width: 25%;
+    width: 20%;
     height: 100%;
     cursor: pointer;
     padding: 1rem !important;
@@ -52,8 +54,7 @@
   }
   .card-header {
     padding: 0 !important;
-    padding-left: 0 !important;
-    padding-top: 0 !important;
+    margin: 0 !important;
   }
   .card-header header {
     background: #151515;
@@ -185,7 +186,7 @@ display: block;
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: rgb(49, 49, 49); 
 
 }
 
@@ -205,6 +206,7 @@ display: block;
 .placediv{
   margin: -1% 0;
   padding: 1%;
+  padding-left:15px !important;
 }
 .mpt{
   position: absolute;
@@ -214,4 +216,18 @@ display: block;
   bottom: 0;
   margin: auto;
   height: max-content;
+  padding-left:15px !important;
+}
+.match {
+  min-height: 2.5vw;
+}
+.tournamentname{
+  padding-left:15px !important;
+}
+
+.dateHead{
+  padding-left:15px !important;
+}
+.tournamentHead{
+  padding-left:15px !important;
 }
