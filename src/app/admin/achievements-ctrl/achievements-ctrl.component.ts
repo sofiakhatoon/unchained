@@ -32,7 +32,7 @@ export class AchievementsCtrlComponent implements OnInit {
     this.getAchAll();
   }
   public openModal() {
-    this.dialog.open(ModalComponent);
+    this.dialog.open(ModalComponent,{data:this.games});
   }
   prizeBooleanForFilter() {
     if (!this.prizeboolean) {

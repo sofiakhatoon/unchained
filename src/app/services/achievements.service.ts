@@ -40,7 +40,7 @@ export class AchievementsService {
   delete(item:Achievements):boolean{
     this.httpClient.post(this.path + 'achievements',item).subscribe(data=>{
       this.result=true;
-      console.log(this.result);
+      //console.log(this.result);
       return this.result;
     });
     return this.result;

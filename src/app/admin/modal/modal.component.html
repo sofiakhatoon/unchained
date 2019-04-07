@@ -21,14 +21,7 @@
 </div>
  
   <div class="form-group">
-    <input
-      class="form-control mr-sm-2"
-      name="achievement_status"
-      [(ngModel)]="addItems.achievement_status"
-      required
-      type="number" min="1" step="any"
-      placeholder="Tournament Status"
-    />
+ 
   </div>
   <div class="form-group">
     <input
@@ -41,14 +34,33 @@
     />
   </div>
   <div class="form-group">
-    <input
-      class="form-control mr-sm-2"
-      name="game_id"
-      [(ngModel)]="addItems.game_id"
-      required
-      type="number" min="1" step="any"
-      placeholder="Game id"
-    />
+      
+
+  <label class="radio-inline"><input name="achievement_status"
+    [(ngModel)]="addItems.achievement_status"
+    required
+    type="radio" value="1"
+    placeholder="Tournament Status">Active &nbsp; </label>
+
+
+  <label class="radio-inline"><input type="radio" name="achievement_status"
+    [(ngModel)]="addItems.achievement_status"
+    required
+    type="radio" value="0"
+    placeholder="Tournament Status" >Passive</label>
+
+
+
+  </div>
+
+  <div class="form-group">
+    
+    <select [(ngModel)]="addItems.game_id">
+        <option value='0'>Select Game </option>
+        <option *ngFor="let c of data" [ngValue]="c.game_id">{{c.game_name}}</option>
+    </select>
+
+
   </div>
   <div class="form-group">
     <input
