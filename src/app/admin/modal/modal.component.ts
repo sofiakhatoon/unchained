@@ -25,7 +25,7 @@ export class ModalComponent implements OnInit {
 
   ngOnInit() {
     this.addItems.game_id=0;
-  console.log(this.data);
+  //console.log(this.data);
   }
   public close() {  
     this.matDialogRef.close();

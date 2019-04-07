@@ -60,7 +60,12 @@ export class AchievementsCtrlComponent implements OnInit {
         };
         this.items.push(array);
       }
-    });
+    },
+    error=>{
+      alert("Bad Request");
+    }
+    
+    );
   }
 
   delete(id:number){

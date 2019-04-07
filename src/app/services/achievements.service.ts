@@ -33,7 +33,12 @@ export class AchievementsService {
    
     this.httpClient.post(this.path + 'achievements/add',formData).subscribe(data=>{
         //console.log(data);
-    });
+    },
+    error=>{
+      alert("Error Message: Fill in the required fields");
+    }
+    
+    );
   }
 
   result:boolean=false;
