@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Globalvariable } from '../app_classes/globalvariable';
 import { Observable } from 'rxjs';
-import { Achievements } from '../models/achievements';
+import { Achievements, AchievementsForAdminPanel } from '../models/achievements';
 import { AchievementsAddEdit } from '../models/achievementsAddEdit';
 import {FileUploader} from 'ng2-file-upload';
 @Injectable({
@@ -18,9 +18,9 @@ export class AchievementsService {
     return this.httpClient.get<Achievements[]>(this.path + "achievements/"+gameid);
    
   }
-  getAchievementsForAdminPanel(): Observable<Achievements[]> {
+  getAchievementsForAdminPanel(): Observable<AchievementsForAdminPanel[]> {
      
-    return this.httpClient.get<Achievements[]>(this.path + "achievements");
+    return this.httpClient.get<AchievementsForAdminPanel[]>(this.path + "achievements");
    
   }
   add(item:AchievementsAddEdit){

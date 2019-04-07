@@ -36,7 +36,7 @@
             <td>{{item.achievement_prize}}</td>
             <td>{{item.games.game_name}}</td>
             <td>{{item.achievement_status}}</td>
-            <td><a (click)='edit(item.video_id)' class="btn btn-warning" style="cursor:pointer"> <i
+            <td><a (click)='openEditModal(item.achievement_id)' class="btn btn-warning" style="cursor:pointer"> <i
                         class="fa fa-pencil fa-2x"></i></a> </td>
             <td><a (click)='delete(item.achievement_id)' class="btn btn-danger" style="cursor:pointer"> <i
                         class="fa fa-remove fa-2x"></i></a> </td>

@@ -26,8 +26,10 @@
   <div class="form-group">
     <input
       class="form-control mr-sm-2"
+      id="dates"
       name="achievement_date"
-      [(ngModel)]="addItems.achievement_date"
+      [ngModel]="addItems.achievement_date | date:'yyyy-MM-dd'"  
+      (ngModelChange)="today = $event"    
       required
       type="date"
       placeholder="Tournament Date"
@@ -39,14 +41,16 @@
   <label class="radio-inline"><input name="achievement_status"
     [(ngModel)]="addItems.achievement_status"
     required
-    type="radio" value="1"
+    [checked]="addItems.achievement_status==1"
+    type="radio"  [value]="1"
     placeholder="Tournament Status">Active &nbsp; </label>
 
 
   <label class="radio-inline"><input type="radio" name="achievement_status"
     [(ngModel)]="addItems.achievement_status"
+    [checked]="addItems.achievement_status==0"
     required
-    type="radio" value="0"
+    type="radio" [value]="0"
     placeholder="Tournament Status" >Passive</label>
 
 
@@ -55,11 +59,11 @@
 
   <div class="form-group">
     
-    <select [(ngModel)]="addItems.game_id">
+    <select [(ngModel)]="addItems.game_id" >
         <option value='0'>Select Game </option>
-        <option *ngFor="let c of data" [ngValue]="c.game_id">{{c.game_name}}</option>
+        <option *ngFor="let c of data.games" [ngValue]="c.game_id"  [selected]="addItems.game_id==true"  >{{c.game_name}}</option>
     </select>
-
+ 
 
   </div>
   <div class="form-group">
@@ -72,16 +76,22 @@
       placeholder="Place"
     />
   </div>
+  <img src="../../../assets/achievements/{{addItems.achievement_imgurl}}" *ngIf="addItems.achievement_imgurl" width="64px" />
   <div class="form-group">
-    <input type="file" #fileInput placeholder="Upload file..." />
-    <p>Maximun allowed file size is 1MB</p>
+ 
+    <input type="file" #fileInput placeholder="Upload file..."  class="inputfile" />
+    <label for="file"> <i class="fa fa-upload" aria-hidden="true"></i>
+     {{fileInputMessage}}</label>
   </div>
 
   
-  <button (click)="add()">Add </button>
+  <button (click)="add()" class="btn btn-primary">Add </button>
 
 
   
 
 </div>
+
+
+
 

@@ -49,6 +49,7 @@ export class AchievementsComponent implements OnInit {
           achievement_prize: item.achievement_prize,
           achievement_status: item.achievement_status,
           achievement_tournament: item.achievement_tournament,
+          
           game_id:item.game_id,
           games:item.games
         };

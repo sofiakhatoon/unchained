@@ -11,3 +11,31 @@
 .modal{
     background: rgba(0,0,0,0.6);
 }
+.inputfile {
+    width: 10.4%;
+    height: 8%;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 8;
+    cursor: pointer;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    padding: 1.2rem;
+    color: rgb(49, 49, 49);
+    background-color: transparent;
+    border: 2px dashed #ced4da;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  color: black;
+ background: transparent;
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}

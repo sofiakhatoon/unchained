@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AchievementsService } from "src/app/services/achievements.service";
 import { GamesService } from "src/app/services/games.service";
 import { Games } from "src/app/models/games";
-import { Achievements } from "src/app/models/achievements";
+import { Achievements, AchievementsForAdminPanel } from "src/app/models/achievements";
 import { ModalComponent } from "../modal/modal.component";
 import { MatDialog } from "@angular/material";
 import { AchievementsAddEdit } from "src/app/models/achievementsAddEdit";
@@ -32,7 +32,13 @@ export class AchievementsCtrlComponent implements OnInit {
     this.getAchAll();
   }
   public openModal() {
-    this.dialog.open(ModalComponent,{data:this.games});
+    this.dialog.open(ModalComponent,{data:{games:this.games}});
+  }
+  public openEditModal(id:number) {
+
+
+      console.log(this.items.filter(f=>f.achievement_id==id));
+    this.dialog.open(ModalComponent,{data:{games:this.games,edititem:this.items.filter(f=>f.achievement_id==id)}});
   }
   prizeBooleanForFilter() {
     if (!this.prizeboolean) {
@@ -47,7 +53,7 @@ export class AchievementsCtrlComponent implements OnInit {
   getAchAll() {
     this.achievementsService.getAchievementsForAdminPanel().subscribe(data => {
       for (let item of data) {
-        const array: Achievements = {
+        const array: AchievementsForAdminPanel = {
           achievement_id:item.achievement_id,
           achievement_date: item.achievement_date,
           achievement_imgurl: item.achievement_imgurl,
@@ -55,6 +61,8 @@ export class AchievementsCtrlComponent implements OnInit {
           achievement_prize: item.achievement_prize,
           achievement_status: item.achievement_status,
           achievement_tournament: item.achievement_tournament,
+          achievement_insertdatetime:item.achievement_insertdatetime,
+          achievement_updatedatetime:item.achievement_updatedatetime,
           game_id: item.game_id,
           games: item.games
         };

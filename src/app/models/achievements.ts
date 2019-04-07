@@ -16,6 +16,25 @@ export class Achievements {
 
 }
 
+export class AchievementsForAdminPanel {
+
+    achievement_id:number;
+    achievement_date:Date;
+    achievement_place:string;
+    achievement_tournament:string;
+    achievement_prize:string;
+    achievement_imgurl:string;
+    achievement_status:number;
+    achievement_insertdatetime:Date=null;
+    achievement_updatedatetime:Date=null;
+    game_id:number;
+    games:Games;
+    
+
+
+}
+
+
 /*
 
      
