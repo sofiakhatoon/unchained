@@ -1,0 +1,75 @@
+<div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="achievement_tournament"
+      [(ngModel)]="addItems.achievement_tournament"
+      required
+      type="text"
+      placeholder="Tournament Name"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="achievement_prize"
+      [(ngModel)]="addItems.achievement_prize"
+      required
+       type="number" min="1" step="any"
+      placeholder="Prize $"
+    />
+</div>
+ 
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="achievement_status"
+      [(ngModel)]="addItems.achievement_status"
+      required
+      type="number" min="1" step="any"
+      placeholder="Tournament Status"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="achievement_date"
+      [(ngModel)]="addItems.achievement_date"
+      required
+      type="date"
+      placeholder="Tournament Date"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="game_id"
+      [(ngModel)]="addItems.game_id"
+      required
+      type="number" min="1" step="any"
+      placeholder="Game id"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="place"
+      [(ngModel)]="addItems.achievement_place"
+      required
+     
+      placeholder="Place"
+    />
+  </div>
+  <div class="form-group">
+    <input type="file" #fileInput placeholder="Upload file..." />
+    <p>Maximun allowed file size is 1MB</p>
+  </div>
+
+  
+  <button (click)="add()">Add </button>
+
+
+  
+
+</div>
+

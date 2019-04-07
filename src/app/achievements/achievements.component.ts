@@ -41,12 +41,16 @@ export class AchievementsComponent implements OnInit {
       for (let item of data) {
 
         const array: Achievements = {
+
+          achievement_id:item.achievement_id,
           achievement_date: item.achievement_date,
           achievement_imgurl: item.achievement_imgurl,
           achievement_place: item.achievement_place.trim(),
           achievement_prize: item.achievement_prize,
           achievement_status: item.achievement_status,
-          achievement_tournament: item.achievement_tournament
+          achievement_tournament: item.achievement_tournament,
+          game_id:item.game_id,
+          games:item.games
         };
         this.items.push(array);
       }

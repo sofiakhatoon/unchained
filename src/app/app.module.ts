@@ -46,7 +46,12 @@ import { AchievementsFilterByPrizePipe } from './pipe/achievementsFilterByPrize.
 import { ModalComponent } from './admin/modal/modal.component';
 
 
-
+import {
+   MatButtonModule, MatCardModule, MatDialogModule, MatIconModule, MatMenuModule,
+   MatToolbarModule,
+ } from '@angular/material';
+import { FileUploadModule } from 'ng2-file-upload';
+import { AchievementsFilterByGamePipe } from './pipe/achievementsFilterByGame.pipe';
 
 
 
@@ -86,7 +91,8 @@ import { ModalComponent } from './admin/modal/modal.component';
       IconControlPipe,
       AchievementsSearchPipe,
       AchievementsFilterByDatePipe,
-      AchievementsFilterByPrizePipe
+      AchievementsFilterByPrizePipe,
+      AchievementsFilterByGamePipe
    ],
    imports: [
       BrowserModule,
@@ -94,7 +100,14 @@ import { ModalComponent } from './admin/modal/modal.component';
       AppRoutingModule,
       NgbModule,
       BrowserAnimationsModule,
-      FormsModule
+      FormsModule,
+      MatToolbarModule,
+      MatCardModule,
+      MatMenuModule,
+      MatIconModule,
+      MatButtonModule,
+      MatDialogModule,
+      FileUploadModule
    ],
    providers: [
       InstagramService,
@@ -103,6 +116,7 @@ import { ModalComponent } from './admin/modal/modal.component';
    ],
    bootstrap: [
       AppComponent
-   ]
+   ],
+   entryComponents: [ ModalComponent ]
 })
 export class AppModule { }

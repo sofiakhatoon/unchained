@@ -1,32 +1,42 @@
 <div class="col-sm-12 text-left mt-4 mb-4">
-    <button class="btn btn-success"> <i class="fa fa-plus fa-2x"></i></button>
+    <button class="btn btn-success" (click)="openModal()"> <i class="fa fa-plus fa-2x"></i></button>
+    <router-outlet></router-outlet>
 </div>
 <table class="table table-responsive table-hover">
     <thead>
         <th scope="col">Icon</th>
-        <th scope="col">Name &nbsp;<input type="text" class="form-control textinput" placeholder="Search By Name"
+        <th scope="col">
+                <input type="text" class="form-control textinput" placeholder="Search By Name"
                 [(ngModel)]="searchTerm" />
         </th>
         <th scope="col">Place </th>
-        <th scope="col">Date <input type="date" class="form-control dateinput" [(ngModel)]="date" /></th>
+        <th scope="col"> <input type="date" class="form-control dateinput" [(ngModel)]="date" /></th>
         <th scope="col">Prize <i class="fa fa-angle-down" (click)="prizeBooleanForFilter()"></i></th>
+        <th scope="col">
+            
+            <select class="form-control" [(ngModel)]="gameId">
+                    <option value='0'>All Games </option>
+                    <option *ngFor="let opt of games"  [value]="opt.game_id" [selected]="opt.selected == true">{{opt.game_name}}</option>
+            </select>
+        </th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
     </thead>
     <tbody>
 
         <tr
-            *ngFor="let item of items | achievementsSearch:searchTerm |  achievementsFilterByDate :date | achievementsFilterByPrize:prizeboolean  ">
+            *ngFor="let item of items | achievementsSearch:searchTerm |  achievementsFilterByDate :date | achievementsFilterByPrize:prizeboolean  | achievementsFilterByGame:gameId ">
             <td scope="row"> <span><img src="../../assets/achievements/{{item.achievement_imgurl}}"
-                        style="width:100%;"></span>
+                        style="width:150px;"></span>
             </td>
             <td><span>{{item.achievement_tournament}}</span></td>
             <td>{{item.achievement_place}}th</td>
             <td [innerHtml]="item.achievement_date | date: 'yyyy/MM/dd'"></td>
             <td>{{item.achievement_prize}}</td>
+            <td>{{item.games.game_name}}</td>
             <td><a (click)='edit(item.video_id)' class="btn btn-warning" style="cursor:pointer"> <i
                         class="fa fa-pencil fa-2x"></i></a> </td>
-            <td><a (click)='edit(item.video_id)' class="btn btn-danger" style="cursor:pointer"> <i
+            <td><a (click)='delete(item.achievement_id)' class="btn btn-danger" style="cursor:pointer"> <i
                         class="fa fa-remove fa-2x"></i></a> </td>
 
         </tr>
