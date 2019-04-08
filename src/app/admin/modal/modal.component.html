@@ -15,9 +15,11 @@
       name="achievement_prize"
       [(ngModel)]="addItems.achievement_prize"
       required
-       type="number" min="1" step="any"
+       type="number" min="0" step="any"
       placeholder="Prize $"
+      style="width:80% !important;display: inline-block;"
     />
+    <span class="text-center" style="width: 20% !important;color:#333" ><i class="fa fa-usd"></i></span>
 </div>
  
   <div class="form-group">
@@ -30,6 +32,17 @@
       name="achievement_date"
       [ngModel]="addItems.achievement_date | date:'yyyy-MM-dd'"  
       (ngModelChange)="today = $event"    
+      required
+      type="date"
+      placeholder="Tournament Date"
+      *ngIf="data.editBTN"
+    />
+    <input
+      class="form-control mr-sm-2"
+      id="dates"
+      name="achievement_date"
+      [(ngModel)]="addItems.achievement_date"    
+      *ngIf="!data.editBTN"
       required
       type="date"
       placeholder="Tournament Date"
@@ -85,8 +98,8 @@
   </div>
 
   
-  <button (click)="add()" class="btn btn-primary">Add </button>
-
+  <button (click)="add()" *ngIf="!data.editBTN" class="btn btn-primary">Add</button>
+  <button (click)="edit()" *ngIf="data.editBTN" class="btn btn-primary">Edit</button>
 
   
 

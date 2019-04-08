@@ -9,7 +9,11 @@ import { Router } from '@angular/router';
 })
 export class OthernavComponent implements OnInit {
 
-  constructor(private authService:AuthService,private router:Router) { }
+  constructor(private authService:AuthService,private router:Router) {
+
+    var a=document.getElementsByTagName("footer")[0].style.display="none";
+    
+   }
 
   ngOnInit() {
   }

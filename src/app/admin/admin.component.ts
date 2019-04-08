@@ -19,9 +19,9 @@ export class AdminComponent implements OnInit {
 
   }
 
+
   ngOnInit() {
-    document.body.style.backgroundColor="#fff";
-    var a=document.getElementsByTagName("footer")[0].style.display="none";
+
   }
 
 

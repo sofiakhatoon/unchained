@@ -1,5 +1,5 @@
 export class AchievementsAddEdit {
-
+    id:number;
     achievement_date:Date;
     achievement_place:string;
     achievement_tournament:string;

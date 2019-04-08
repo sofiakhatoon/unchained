@@ -14,7 +14,12 @@ export class GamesService {
 
   getGames(): Observable<Games[]> {
      
-    return this.httpClient.get<Games[]>(this.path + "Games");
+    return this.httpClient.get<Games[]>(this.path + "Games/getAll");
+   
+  }
+  getGamesForAdmin(): Observable<Games[]> {
+     
+    return this.httpClient.get<Games[]>(this.path + "Games/getAllForAdmin");
    
   }
 

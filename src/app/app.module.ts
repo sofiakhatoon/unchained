@@ -52,6 +52,7 @@ import {
  } from '@angular/material';
 import { FileUploadModule } from 'ng2-file-upload';
 import { AchievementsFilterByGamePipe } from './pipe/achievementsFilterByGame.pipe';
+import { IntToactivepassivePipe } from './pipe/intToactivepassive.pipe';
 
 
 
@@ -92,7 +93,8 @@ import { AchievementsFilterByGamePipe } from './pipe/achievementsFilterByGame.pi
       AchievementsSearchPipe,
       AchievementsFilterByDatePipe,
       AchievementsFilterByPrizePipe,
-      AchievementsFilterByGamePipe
+      AchievementsFilterByGamePipe,
+      IntToactivepassivePipe
    ],
    imports: [
       BrowserModule,

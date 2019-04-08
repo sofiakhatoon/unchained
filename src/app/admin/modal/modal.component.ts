@@ -30,10 +30,10 @@ export class ModalComponent implements OnInit {
   addItems: AchievementsAddEdit = new AchievementsAddEdit();
   hasBaseDropZoneOver = false;
   path: string = Globalvariable.apiurl;
-
+ 
   ngOnInit() {
 
-    console.log(this.data);
+    //console.log(this.data);
     let   fileInputMessage="Choose a file";
     this.addItems.game_id = 0;
     if (this.data.edititem) {
@@ -54,5 +54,17 @@ export class ModalComponent implements OnInit {
     }
 
     this.achievementsService.add(this.addItems);
+  }
+
+
+  edit() {
+    const fileBrowser = this.fileInput.nativeElement;
+    if (fileBrowser.files && fileBrowser.files[0]) {
+      this.addItems.myfile = fileBrowser.files[0];
+    }
+    //console.log(this.addItems);
+  this.achievementsService.edit(this.addItems);
+  this.matDialogRef.close();
+
   }
 }

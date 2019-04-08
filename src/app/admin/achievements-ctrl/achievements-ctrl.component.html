@@ -20,6 +20,9 @@
             </select>
         </th>
         <th scope="col">Status</th>
+        <th scope="col">Insert Date</th>
+        <th scope="col">Update Date</th>
+  
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
     </thead>
@@ -28,14 +31,16 @@
         <tr
             *ngFor="let item of items | achievementsSearch:searchTerm |  achievementsFilterByDate :date | achievementsFilterByPrize:prizeboolean  | achievementsFilterByGame:gameId ">
             <td scope="row"> <span><img src="../../assets/achievements/{{item.achievement_imgurl}}"
-                        style="width:150px;"></span>
+                        style="width:50px;"></span>
             </td>
             <td><span>{{item.achievement_tournament}}</span></td>
             <td>{{item.achievement_place}}th</td>
             <td [innerHtml]="item.achievement_date | date: 'yyyy/MM/dd'"></td>
             <td>{{item.achievement_prize}}</td>
             <td>{{item.games.game_name}}</td>
-            <td>{{item.achievement_status}}</td>
+            <td [innerHTML]="item.achievement_status | intToactivepassive:item.achievement_status"></td>
+            <td [innerHtml]="item.achievement_insertdatetime | date: 'yyyy/MM/dd hh:mm'"></td>
+            <td [innerHtml]="item.achievement_updatedatetime | date: 'yyyy/MM/dd hh:mm'"></td>
             <td><a (click)='openEditModal(item.achievement_id)' class="btn btn-warning" style="cursor:pointer"> <i
                         class="fa fa-pencil fa-2x"></i></a> </td>
             <td><a (click)='delete(item.achievement_id)' class="btn btn-danger" style="cursor:pointer"> <i
