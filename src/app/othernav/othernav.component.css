@@ -65,4 +65,5 @@ body {
 
   .mains {
     background:white !important;
+    height: 100vh;
   }
