@@ -36,7 +36,7 @@ export class AchievementsComponent implements OnInit {
   getArchByGameId(gameid: number) {
     this.achievementsService.getAchievements(gameid).subscribe(data => {
 
-      console.log(data);
+      //console.log(data);
       this.items=[];
       for (let item of data) {
 

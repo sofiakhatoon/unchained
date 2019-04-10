@@ -19,7 +19,7 @@ export class SliderComponent implements OnInit {
     config.showNavigationArrows=false;
     this.sliderService.getSlider().subscribe(data => {
       this.items=data;
-      console.log(this.items);
+      
     });
 
   }
