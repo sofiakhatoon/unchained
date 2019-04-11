@@ -1,0 +1,25 @@
+<div class="container" style=" min-height: 10vw;">
+  <div class="row" *ngIf="itemsStream">
+      <a routerLink="/Streams-Details/{{item.username}}" class="col-sm-3 videoItem" *ngFor="let item of itemsStream | slice:0:4  ">
+          <div>
+
+
+           <div class="card" *ngIf="item.stream!=null" style="width: 100%;">
+              <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_{{item.username}}-640x360.jpg" width="100%" />
+             <span class="item-video-btn">
+     
+             </span>
+          </div>
+                <div class="card" *ngIf="item.stream==null" style="width: 100%;">
+                     <img src="../../../assets/img/streams.jpg" width="100%" />
+                    <span class="item-video-btn">
+            
+                    </span>
+                 </div>
+          </div>
+       
+    
+    
+        </a>
+  </div>
+</div>

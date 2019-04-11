@@ -1,8 +1,11 @@
-<section class="container streamVideos">
+<section class="container streamVideos" style="    min-height: 10vw;">
   <br />
   <div class="row">
     <div class="col-sm-8">
-      <h2><a class="streams" id="streamsbtn" (click)='viewStreams()'><span >STREAMS</span></a><a class="videos" id="videosbtn" (click)='viewVideos()' ><span>VIDEOS</span></a> </h2>
+      <h2><a class="streams" id="streamsbtn" (click)='viewStreams()'
+          ><span>STREAMS</span></a>
+        <a class="videos" id="videosbtn" (click)='viewVideos()' 
+          ><span>VIDEOS</span></a> </h2>
     </div>
     <div class="col-sm-4 text-right">
 
@@ -14,25 +17,73 @@
 
 
   <hr />
-  <div class="row" *ngIf="items" >
 
-    <a routerLink='/{{routeExt}}-Details/{{item.video_id}}' class="col-sm-3 videoItem"   *ngFor="let item of items | slice:0:end">
+      <app-streamsHome *ngIf="video; else compB"></app-streamsHome>
 
-      <div class="card" style="width: 100%;">
+      <ng-template #compB>
+        <app-videosHome></app-videosHome>
+      </ng-template>
 
-        <img src="../../../assets/img/{{item.video_img_url}}" width="100%" />
 
-        <span class="item-video-btn">
 
-        </span>
+
+
+  <!--
+  <div class="row" *ngIf="itemsStream?.lentgh>0">
+
+     
+    <a class="col-sm-3 videoItem" *ngFor="let item of itemsStream | slice:0:end  ">
+      <div>
+          <div class="card"  *ngIf="item.stream" style="width: 100%;">
+
+              <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_{{item.username}}-1920x1080.jpg" width="100%" />
+                   <span class="item-video-btn">
+      
+              </span>
+            </div>
+            <div class="card"  *ngIf="!item.stream" style="width: 100%;">
+                 <img src="../../../assets/img/streams.jpg" width="100%" />
+                <span class="item-video-btn">
+        
+                </span>
+             </div>
       </div>
+   
+
 
     </a>
-
+    
 
 
   </div>
+  <div class="row" *ngIf="itemVideo?.lentgh>0">
 
+     
+      <a class="col-sm-3 videoItem" *ngFor="let item of itemsVideo | slice:0:end  ">
+        <div>
+            <div class="card"  *ngIf="item.stream" style="width: 100%;">
+  
+                <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_{{item.username}}-1920x1080.jpg" width="100%" />
+                     <span class="item-video-btn">
+        
+                </span>
+              </div>
+              <div class="card"  *ngIf="!item.stream" style="width: 100%;">
+                   <img src="../../../assets/img/streams.jpg" width="100%" />
+                  <span class="item-video-btn">
+          
+                  </span>
+               </div>
+        </div>
+     
+  
+  
+      </a>
+      
+  
+  
+    </div>
 
+-->
 
 </section>

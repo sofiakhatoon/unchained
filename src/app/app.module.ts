@@ -53,7 +53,10 @@ import {
 import { FileUploadModule } from 'ng2-file-upload';
 import { AchievementsFilterByGamePipe } from './pipe/achievementsFilterByGame.pipe';
 import { IntToactivepassivePipe } from './pipe/intToactivepassive.pipe';
-
+import { SanitizeHtmlPipe } from './pipe/sanitizeHtml.pipe';
+import { StreamsHomeComponent } from './home/stream-videos/streamsHome/streamsHome.component';
+import { VideosHomeComponent } from './home/stream-videos/videosHome/videosHome.component';
+import { VideoDetailsComponent } from './home/stream-videos/video-details/video-details.component';
 
 
 @NgModule({
@@ -86,6 +89,11 @@ import { IntToactivepassivePipe } from './pipe/intToactivepassive.pipe';
       AchievementsComponent,
       AchievementsCtrlComponent,
       ModalComponent,
+      StreamsHomeComponent,
+      VideosHomeComponent,
+      VideoDetailsComponent,
+  
+
 
 
       SafePipe,
@@ -94,7 +102,8 @@ import { IntToactivepassivePipe } from './pipe/intToactivepassive.pipe';
       AchievementsFilterByDatePipe,
       AchievementsFilterByPrizePipe,
       AchievementsFilterByGamePipe,
-      IntToactivepassivePipe
+      IntToactivepassivePipe,
+      SanitizeHtmlPipe
    ],
    imports: [
       BrowserModule,

@@ -31,6 +31,10 @@ getChannelStream(TwChannelID:string): Observable<any> {
   return this.httpClient.get<any>(this.baseTwitch+"/streams/"+TwChannelID,this.options);
 
 }
+getChannelVideos(TwChannelID:string):Observable<any>{
+ return this.httpClient
+ .get<any>(this.baseTwitch+"channels/"+TwChannelID+"/videos",this.options);
+}
 
 
 }

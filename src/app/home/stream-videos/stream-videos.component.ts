@@ -1,29 +1,14 @@
 import { Component, OnInit, ElementRef } from "@angular/core";
-import { trigger, transition, style, animate } from "@angular/animations";
+
 import { RouterService } from "src/app/services/router.service";
-import { StreamsService } from "src/app/services/streams.service";
-import { VideosService } from "src/app/services/videos.service";
-import { TwitchService } from "src/app/services/twitch.service";
+
 import { Twchannel } from "src/app/models/Twchannel";
-import { Twstream } from "src/app/models/Twstream";
-import { flatMap, map } from "rxjs/operators";
-import { Observable } from "rxjs";
+
 
 @Component({
   selector: "app-stream-videos",
   templateUrl: "./stream-videos.component.html",
-  animations: [
-    trigger("slideInOut", [
-      transition(":enter", [
-        style({ transform: "translateX(100%)" }),
-        animate(".7s", style({ transform: "translateX(0%)" }))
-      ]),
-      transition(":leave", [
-        style({ transform: "translateX(0%)" }),
-        animate(".7s", style({ transform: "translateX(100%)" }))
-      ])
-    ])
-  ],
+ 
   styleUrls: ["./stream-videos.component.css"],
   providers: [RouterService]
 })
@@ -31,68 +16,45 @@ export class StreamVideosComponent implements OnInit {
   constructor(
     private routerService: RouterService,
     private myElement: ElementRef,
-    private streamsService: StreamsService,
-    private videoService: VideosService,
-    private twitchService: TwitchService
-  ) {}
+  
+  ) {  }
 
-  items: any = [];
+  itemsStream = [];
+  itemsVideo = [];
   end = 4;
-  clickForMoreBTN = true; //click for more button /home
-  clickMoreBTN = false; //click for more /streams-videos
-  //'videos.jpg','videos.jpg','videos.jpg','videos.jpg']
 
   routeExt: string;
   ngOnInit() {
     this.viewStreams();
   }
-  TwchannelArray: Twchannel[] = [];
-  //Twchannel:Twchannel=new Twchannel();
-  users: string[] = ["zaferkrk96", "unchainedesports"];
-  viewStreams() {
-    /*let path=['streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg','streams.jpg'];
-    this.clickBGremove();
-    //console.log(this.myElement.nativeElement.querySelector('#streamsbtn'));
-    let element:HTMLElement=this.myElement.nativeElement.querySelector("#streamsbtn");
-    this.routeExt="Streams";
-    element.classList.add("svbuttonbg");
-    this.streamsService.GetStreams().subscribe(data => {
-      this.items=data;
-    });*/
-    let ID: number;
-    for (let username of this.users) {
-      this.twitchService
-        .getChannelInfo(username)
 
-        .pipe(
-          flatMap(resx =>
-            this.twitchService.getChannelStream(resx.users[0]._id)
-          )
-        )
-        .subscribe(res2 => {
-          const item: Twchannel = {
-            username: username,
-            stream: res2.stream,
-            _id: res2.stream != null ? res2.stream.channel._id : null
-          };
-          console.log(res2);
-          this.TwchannelArray.push(item);
-          console.log(this.TwchannelArray);
-        });
+  //Twchannel:Twchannel=new Twchannel();
+  video:boolean=false;
+  viewStreams() {
+    this.clickBGremove();
+    let element:HTMLElement=this.myElement.nativeElement.querySelector("#streamsbtn");
+    this.routeExt="streams";
+    if(element){
+      element.classList.add("svbuttonbg");
     }
+
+    this.video=true;
+  
+    console.log(this.video);
   }
 
   viewVideos() {
-    /* let path=['video.jpg','video.jpg','video.jpg'];
     this.clickBGremove();
     let element:HTMLElement=this.myElement.nativeElement.querySelector("#videosbtn");
     this.routeExt="Videos";
-    element.classList.add("svbuttonbg");
+    if(element){
+element.classList.add("svbuttonbg");
+    }
+    
+    this.video=false;
+    console.log(this.video);
 
-
-    this.videoService.getVideos().subscribe(data => {
-      this.items=data;
-    });*/
+ 
   }
 
   clickBGremove() {

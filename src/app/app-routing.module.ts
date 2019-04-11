@@ -20,6 +20,7 @@ import { StreamsCtrlComponent } from './admin/streams-ctrl/streams-ctrl.componen
 import { VideosCtrlComponent } from './admin/videos-ctrl/videos-ctrl.component';
 import { StreamDetailsComponent } from './home/stream-videos/stream-details/stream-details.component';
 import { AchievementsCtrlComponent } from './admin/achievements-ctrl/achievements-ctrl.component';
+import { VideoDetailsComponent } from './home/stream-videos/video-details/video-details.component';
 
 
 const routes: Routes = [
@@ -29,7 +30,9 @@ const routes: Routes = [
   { path: 'Partners', component: NavComponent, children: [{ path: '', component: PartnersComponent }] },
   { path: 'Streams', component: NavComponent, children: [{ path: '', component: StreamsComponent }] },
   { path: 'Videos', component: NavComponent,children: [{ path: '', component: VideoComponent }] },
-  { path: 'Streams-Details/:id', component: NavComponent,children: [{ path: '', component: StreamDetailsComponent }] },
+  { path: 'Streams-Details/:username', component: NavComponent,children: [{ path: '', component: StreamDetailsComponent }] },
+  { path: 'Video-Details/:id', component: NavComponent,children: [{ path: '', component: VideoDetailsComponent }] },
+
   { path: 'Ctrl', component: OthernavComponent,children: [{ path: '', component: AdminComponent }],canActivate:[LoginGuard] },
   { path: 'Streams-control', component: OthernavComponent,children: [{ path: '', component:StreamsCtrlComponent }],canActivate:[LoginGuard] },
   { path: 'Videos-control', component: OthernavComponent,children: [{ path: '', component:VideosCtrlComponent }],canActivate:[LoginGuard] },

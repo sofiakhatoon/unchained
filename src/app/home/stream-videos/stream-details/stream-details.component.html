@@ -1,19 +1,28 @@
-<div class="container" *ngIf='details'>
+<div class="container  mb-5" *ngIf='embed'>
+  <div class="row mt-5">
+    <div class="col-sm-12">
+
+        <h2>Live: {{username}}</h2>
+        <hr/>
+    </div>
+
+ 
+  </div>
+  <div class="row" >
+
+        <div class="col-sm-9 iframe mt-2" [innerHTML]="embed | safeHtml">
+
+          </div>
+          <div class="col-sm-3 iframe mt-2" [innerHTML]="chat | safeHtml">
+      
+          </div>
 
 
-  <div class="col-sm-12 iframe mt-5" [innerHTML]="details.video_link | safeHtml" >
+ 
 
   </div>
-  
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/><br/>
-<br/>
-<br/><br/>
-<br/>
-<br/>
+
+
+
 
 </div>
