@@ -32,17 +32,17 @@ export class StreamDetailsComponent implements OnInit {
   username:string;
   getStreamById(id:string) {
     this.username=id;
-   this.embed='<iframe id="live" src="https://player.twitch.tv/?channel='+id+'" frameborder="0" allowfullscreen="true" scrolling="no" width="100%"  ></iframe>';
-    this.chat='<iframe id="chat" src="https://www.twitch.tv/embed/'+id+'/chat" frameborder="0" scrolling="no" width="100%" ></iframe>';
+   this.embed='<iframe id="live" style="height:38em" src="https://player.twitch.tv/?channel='+id+'" frameborder="0" allowfullscreen="true" scrolling="no" width="100%"  ></iframe>';
+    this.chat='<iframe id="chat" style="height:38em" src="https://www.twitch.tv/embed/'+id+'/chat" frameborder="0" scrolling="no" width="100%" ></iframe>';
    setTimeout(() => {
     let live=this.document.getElementById('live');
     let chat=this.document.getElementById('chat');
     if(live!=null){
-      live.style.height="30vw";
+      //live.style.height="38em";
     }
     if(chat!=null)
     {
-      chat.style.height="30vw";
+      //chat.style.height="38em";
     }
 
    }, 1500);

@@ -57,6 +57,9 @@ import { SanitizeHtmlPipe } from './pipe/sanitizeHtml.pipe';
 import { StreamsHomeComponent } from './home/stream-videos/streamsHome/streamsHome.component';
 import { VideosHomeComponent } from './home/stream-videos/videosHome/videosHome.component';
 import { VideoDetailsComponent } from './home/stream-videos/video-details/video-details.component';
+import { VideoOrderByDescPipe } from './pipe/videoOrderByDesc.pipe';
+import { RouterLinkReplacePipe } from './pipe/routerLinkReplace.pipe';
+import { RouterLinkUnReplacePipe } from './pipe/RouterLinkUnReplace.pipe';
 
 
 @NgModule({
@@ -103,7 +106,10 @@ import { VideoDetailsComponent } from './home/stream-videos/video-details/video-
       AchievementsFilterByPrizePipe,
       AchievementsFilterByGamePipe,
       IntToactivepassivePipe,
-      SanitizeHtmlPipe
+      SanitizeHtmlPipe,
+      VideoOrderByDescPipe,
+      RouterLinkReplacePipe,
+      RouterLinkUnReplacePipe
    ],
    imports: [
       BrowserModule,

@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'Streams', component: NavComponent, children: [{ path: '', component: StreamsComponent }] },
   { path: 'Videos', component: NavComponent,children: [{ path: '', component: VideoComponent }] },
   { path: 'Streams-Details/:username', component: NavComponent,children: [{ path: '', component: StreamDetailsComponent }] },
-  { path: 'Video-Details/:id', component: NavComponent,children: [{ path: '', component: VideoDetailsComponent }] },
+  { path: 'Video-Details/:title/:id/:source', component: NavComponent,children: [{ path: '', component: VideoDetailsComponent }] },
 
   { path: 'Ctrl', component: OthernavComponent,children: [{ path: '', component: AdminComponent }],canActivate:[LoginGuard] },
   { path: 'Streams-control', component: OthernavComponent,children: [{ path: '', component:StreamsCtrlComponent }],canActivate:[LoginGuard] },

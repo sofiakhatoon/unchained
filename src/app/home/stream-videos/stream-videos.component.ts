@@ -33,7 +33,7 @@ export class StreamVideosComponent implements OnInit {
   viewStreams() {
     this.clickBGremove();
     let element:HTMLElement=this.myElement.nativeElement.querySelector("#streamsbtn");
-    this.routeExt="streams";
+    this.routeExt="Streams";
     if(element){
       element.classList.add("svbuttonbg");
     }

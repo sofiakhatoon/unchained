@@ -14,17 +14,24 @@
  
   </div>
   
-    <div class="row" *ngIf="items" >
+    <div class="row" *ngIf="itemsStream" >
 
-        <a routerLink='/videos' class="col-sm-3 videoItem mb-3"   *ngFor="let item of items | slice:0:end">
+        <a routerLink="/Streams-Details/{{item.username}}" class="col-sm-3 videoItem mb-3"   *ngFor="let item of itemsStream | slice:0:end">
+          <div>
+
+
+            <div class="card" *ngIf="item.stream!=null" style="width: 100%;">
+              <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_{{item.username}}-640x360.jpg" width="100%" />
+              <span class="item-video-btn">
     
-          <div class="card" style="width: 100%;">
+              </span>
+            </div>
+            <div class="card" *ngIf="item.stream==null" style="width: 100%;">
+              <img src="../../../assets/img/streams.jpg" width="100%" />
+              <span class="item-video-btn">
     
-            <img src="../../../assets/img/{{item}}" width="100%" />
-    
-            <span class="item-video-btn">
-    
-            </span>
+              </span>
+            </div>
           </div>
     
         </a>

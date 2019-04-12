@@ -14,19 +14,26 @@ export class VideoDetailsComponent implements OnInit {
   ngOnInit() {
 
     this.activatedRoute.params.subscribe(params => {
-      this.getStreamById(params["id"]);
+      this.getStreamById(params["id"],params["source"]);
+      this.title=params["title"];
     });
 
   }
 
   embed:string;
-  chat:string;
-  getStreamById(id:string) {
-   this.embed='<iframe id="video" src="https://player.twitch.tv/?autoplay=false&video='+id+'" frameborder="0" allowfullscreen="true" scrolling="no" width="100%"></iframe>';
-    setTimeout(() => {
+  title:string;
+  getStreamById(id:string,source:string) {
+    if(source=="youtube"){
+      this.embed='<iframe  width="100%" style="height:38em" id="video"   src="https://www.youtube.com/embed/'+id+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+ 
+    }else{
+      this.embed='<iframe id="video" height="38em" src="https://player.twitch.tv/?autoplay=false&video='+id+'" frameborder="0" allowfullscreen="true" scrolling="no" width="100%"></iframe>';
+ 
+    }
+      setTimeout(() => {
     let video=this.document.getElementById('video');
     if(video!=null){
-      video.style.height="30vw";
+      //video.style.height="38em";
     }
     
 

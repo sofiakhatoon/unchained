@@ -1,7 +1,7 @@
-<div class="container  mb-5" *ngIf='embed'>
+<div class="container  mb-5" *ngIf='embed' style="min-height:35vw !important;">
     <div class="row mt-5">
       <div class="col-sm-12">
-  
+          <h2>{{title | RouterLinkUnReplace}}</h2>
           <hr/>
       </div>
   
@@ -9,7 +9,7 @@
     </div>
     <div class="row" >
   
-          <div class="col-sm-9 text-center iframe mt-2" [innerHTML]="embed | safeHtml">
+          <div class="col-sm-12 text-center iframe mt-2" [innerHTML]="embed | safeHtml">
   
             </div>
            

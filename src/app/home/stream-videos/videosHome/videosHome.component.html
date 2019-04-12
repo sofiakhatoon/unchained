@@ -1,10 +1,10 @@
-<div class="container" style="    min-height: 10vw;">
+<div class="container" style="min-height:224px !important;">
     <div class="row" *ngIf="itemsVideo">
-        <a routerLink="/Video-Details/{{item._id}}"  class="col-sm-3 videoItem" *ngFor="let item of itemsVideo | slice:0:4  ">
+        <a routerLink="/Video-Details/{{item.title | routerLinkReplace}}/{{item.videoId}}/{{item.source}}"   class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12  videoItem" *ngFor="let item of itemsVideo | slice:0:4 | videoOrderByDesc ">
             <div>
-                <div class="card"  style="width: 100%;">
+                <div class="card" >
       
-                    <img src="{{item.preview.large}}" width="100%" />
+                    <img src="{{item.img}}"  />
                          <span class="item-video-btn">
             
                          </span>

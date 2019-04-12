@@ -1,7 +1,7 @@
 
 .logo{
     width: 20%;
-
+    cursor: pointer;
   
     transition: transform .2s; /* Animation */
   
