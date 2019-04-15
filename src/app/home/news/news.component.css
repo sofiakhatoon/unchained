@@ -1,6 +1,6 @@
 .card{
     background-color: #1d1d1d;
-  
+    transition: .1s all ease-in-out; 
 }
 .card p{
     color: aliceblue;

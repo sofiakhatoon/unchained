@@ -5,7 +5,7 @@
     </header>
 
     <div *ngIf="games">
-      <ul  *ngIf="games?.length>1" >
+      <ul  *ngIf="games?.length>0" >
         <li class="text-center" (click)="getArchByGameId(item.game_id)" *ngFor="let item of games"><a><img src="../../assets/games/{{item.game_img_url}}"></a></li>
       </ul>
     </div>

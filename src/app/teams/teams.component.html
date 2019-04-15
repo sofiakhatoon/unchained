@@ -1,24 +1,271 @@
 <div class="container mt-5">
   <div class="row">
-  </div> 
-  <div class="row">
-    <div  class="col-sm-12 col-md-6 col-lg-6 col-xl-3 ">
-      <div  class="card " style="width: 100%;">
-        <div class="card-top  background">
-            <img  alt="Card image cap" class="card-img-top" src="../../../assets/img/teams.png">
-        </div>
-   
-        <div  class="card-body">
-          <h5 class="card-title text-left">Pro League Season 9: NAVI.GG.BET debut</h5>
-          <p >On March 15, at 22:45 CET, the NAVI.GG.BET team will debut in the 9th season of the Pro
-            League. The rival of the "yellow-black" will be PENTA Sports.</p>
-        </div>
-        <div class="card-footer"><span>05 Apr 2019 </span><span 
-            style="float:right">25 <i class="fa fa-comments"></i></span><span 
-            style="float:right">999 <i class="fa fa-eye"></i> &nbsp; </span></div>
+    <div class="col-sm-12">
+      <h2>Teams</h2>
+      <hr />
+    </div>
+
+  </div>
+  <div class="row mb-4">
+    <div class="col-12 paddingzero text-center">
+
+      <div class="games" *ngIf="games">
+        <ul *ngIf="games?.length>0">
+          <li class="text-center"  *ngFor="let item of games"><a><img
+                src="../../assets/games/{{item.game_img_url}}"></a></li>
+        </ul>
       </div>
     </div>
 
+  </div>
+  <div class="row card mb-4">
+    <div class="col-xl-3 col-sm-3 col-lg-3 col-md-3 col-12 paddingzero">
+      <img alt="Card image cap" class="card-img-top" src="../../../assets/img/teams.png">
+    </div>
+    <div class="col-xl-9 col-sm-9 col-lg-9 col-md-9 col-12 info">
+      <div class="row">
 
+        <ul>
+          <li>
+            <h3>TheVeryFamous.ar3a</h3>
+          </li>
+          <li>
+            &nbsp;
+          </li>
+          <li>
+            <i class="fa fa-twitter"></i>
+          </li>
+          <li>
+            <i class="fa fa-twitch"></i>
+          </li>
+          <li>
+            <h6>
+              Top
+            </h6>
+
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <p>
+            Sergen ‘BrokenBlade’ Çelik joined TSM in the preseason leading up to Season 9 of the NA LCS to be the team’s
+            starting top laner. Broken Blade was signed to the team after a year of complete domination within the
+            Turkish Championship League, taking 1st or 2nd place in every major competition within the region and
+            finishing the season with four accounts in challenger on the EUW servers. With this success at his young
+            age, mechanically gifted top laner is coming into the NA LCS hungry for more, hoping to prove to the world
+            that he can carry over his same level of dominance into a major region.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row card mb-4">
+    <div class="col-xl-3 col-sm-3 col-lg-3 col-md-3 col-12 paddingzero">
+      <img alt="Card image cap" class="card-img-top" src="../../../assets/img/teams.png">
+    </div>
+    <div class="col-xl-9 col-sm-9 col-lg-9 col-md-9 col-12 info">
+      <div class="row">
+
+        <ul>
+          <li>
+            <h3>TheVeryFamous.ar3a</h3>
+          </li>
+          <li>
+            &nbsp;
+          </li>
+          <li>
+            <i class="fa fa-twitter"></i>
+          </li>
+          <li>
+            <i class="fa fa-twitch"></i>
+          </li>
+          <li>
+            <h6>
+              Top
+            </h6>
+
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <p>
+            Sergen ‘BrokenBlade’ Çelik joined TSM in the preseason leading up to Season 9 of the NA LCS to be the team’s
+            starting top laner. Broken Blade was signed to the team after a year of complete domination within the
+            Turkish Championship League, taking 1st or 2nd place in every major competition within the region and
+            finishing the season with four accounts in challenger on the EUW servers. With this success at his young
+            age, mechanically gifted top laner is coming into the NA LCS hungry for more, hoping to prove to the world
+            that he can carry over his same level of dominance into a major region.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row card mb-4">
+    <div class="col-xl-3 col-sm-3 col-lg-3 col-md-3 col-12 paddingzero">
+      <img alt="Card image cap" class="card-img-top" src="../../../assets/img/teams.png">
+    </div>
+    <div class="col-xl-9 col-sm-9 col-lg-9 col-md-9 col-12 info">
+      <div class="row">
+
+        <ul>
+          <li>
+            <h3>TheVeryFamous.ar3a</h3>
+          </li>
+          <li>
+            &nbsp;
+          </li>
+          <li>
+            <i class="fa fa-twitter"></i>
+          </li>
+          <li>
+            <i class="fa fa-twitch"></i>
+          </li>
+          <li>
+            <h6>
+              Top
+            </h6>
+
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <p>
+            Sergen ‘BrokenBlade’ Çelik joined TSM in the preseason leading up to Season 9 of the NA LCS to be the team’s
+            starting top laner. Broken Blade was signed to the team after a year of complete domination within the
+            Turkish Championship League, taking 1st or 2nd place in every major competition within the region and
+            finishing the season with four accounts in challenger on the EUW servers. With this success at his young
+            age, mechanically gifted top laner is coming into the NA LCS hungry for more, hoping to prove to the world
+            that he can carry over his same level of dominance into a major region.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row card mb-4">
+    <div class="col-xl-3 col-sm-3 col-lg-3 col-md-3 col-12 paddingzero">
+      <img alt="Card image cap" class="card-img-top" src="../../../assets/img/teams.png">
+    </div>
+    <div class="col-xl-9 col-sm-9 col-lg-9 col-md-9 col-12 info">
+      <div class="row">
+
+        <ul>
+          <li>
+            <h3>TheVeryFamous.ar3a</h3>
+          </li>
+          <li>
+            &nbsp;
+          </li>
+          <li>
+            <i class="fa fa-twitter"></i>
+          </li>
+          <li>
+            <i class="fa fa-twitch"></i>
+          </li>
+          <li>
+            <h6>
+              Top
+            </h6>
+
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <p>
+            Sergen ‘BrokenBlade’ Çelik joined TSM in the preseason leading up to Season 9 of the NA LCS to be the team’s
+            starting top laner. Broken Blade was signed to the team after a year of complete domination within the
+            Turkish Championship League, taking 1st or 2nd place in every major competition within the region and
+            finishing the season with four accounts in challenger on the EUW servers. With this success at his young
+            age, mechanically gifted top laner is coming into the NA LCS hungry for more, hoping to prove to the world
+            that he can carry over his same level of dominance into a major region.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row card mb-4">
+    <div class="col-xl-3 col-sm-3 col-lg-3 col-md-3 col-12 paddingzero">
+      <img alt="Card image cap" class="card-img-top" src="../../../assets/img/teams.png">
+    </div>
+    <div class="col-xl-9 col-sm-9 col-lg-9 col-md-9 col-12 info">
+      <div class="row">
+
+        <ul>
+          <li>
+            <h3>TheVeryFamous.ar3a</h3>
+          </li>
+          <li>
+            &nbsp;
+          </li>
+          <li>
+            <i class="fa fa-twitter"></i>
+          </li>
+          <li>
+            <i class="fa fa-twitch"></i>
+          </li>
+          <li>
+            <h6>
+              Top
+            </h6>
+
+          </li>
+        </ul>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <p>
+            Sergen ‘BrokenBlade’ Çelik joined TSM in the preseason leading up to Season 9 of the NA LCS to be the team’s
+            starting top laner. Broken Blade was signed to the team after a year of complete domination within the
+            Turkish Championship League, taking 1st or 2nd place in every major competition within the region and
+            finishing the season with four accounts in challenger on the EUW servers. With this success at his young
+            age, mechanically gifted top laner is coming into the NA LCS hungry for more, hoping to prove to the world
+            that he can carry over his same level of dominance into a major region.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row bgachievements text-center">
+    <div class="col-sm-3">
+      <h3>LAST  <br/>ACHIEVEMENTS</h3>
+
+    </div>
+    <div class="col-sm-4 text-center cbg" style="    margin-right: 1% !important;  margin-left: 1% !important;">
+      <h4>2019</h4>
+      <ul>
+        <li>MDL Disneyland® Paris Major Europe Open Qualifier #2</li>
+        <li>MDL Disneyland® Paris Major Europe Open Qualifier #1 </li>
+      </ul>
+    </div>
+    <div class="col-sm-6 text-center cbg">
+      <h4>2018</h4>
+      <ul>
+        <li>MegaFon Champions League Season 2</li>
+        <li>LOOT.BET Winter Masters</li>
+        <li>joinDOTA League Season 14 Europe</li>
+        <li>ESL One Katowice 2019 Europe Open Qualifier</li>
+        <li>The Chongqing Major Europe Open Qualifier #1</li>
+        <li>The Chongqing Major Europe Open Qualifier #1</li>
+      </ul>
+    </div>
+   
   </div>
 </div>

@@ -1,6 +1,8 @@
 .card{
-    background-color: #1d1d1d;
-  
+    background-color: #535353;
+    flex-direction: unset;
+
+    transition: .1s all ease-in-out; 
 }
 .card p{
     color: aliceblue;
@@ -13,8 +15,8 @@
 }
 .card:hover {
     box-shadow: 0 8px 34px 5px #0a0404;
-    -webkit-transform: scale(1.04);
-    transform: scale(1.04);
+    -webkit-transform: scale(1.01);
+    transform: scale(1.01);
     z-index: 9999;
     overflow: hidden;
     cursor: pointer;
@@ -27,5 +29,124 @@ span{
     background: transparent;
 }
 .card img{
-    background: #00215c !important;
+    background: #8d8d8d !important;
+}
+.paddingzero{
+    padding: 0 !important
+}
+p{
+    color: #848484;
+  
+}
+.info{
+    padding: 20px !important;
+}
+i{
+    color:white;
+    transition: all .1s;
+    margin-top: 10px;
+}
+i:hover{
+ transform: scale(1.2);   
+}
+.card ul{
+    width: 100%;
+    margin-bottom: .2rem;
+}
+.card li{
+    float: left;
+    list-style: none;
+    padding:0 .5rem;
+
+}
+h6{
+    color: white;
+    margin-top: 5px !important;
+}
+.row{
+    margin: 0;
+}
+.bgachievements{
+    background: url('../../assets/img/footer-bg.jpg') no-repeat top center;
+    background-size: cover;
+    height: 20rem;
+    margin-bottom: -2vw;
+    padding: 1.5rem 0rem 1.5rem 0rem;
+}
+.bgachievements .cbg{
+  
+    padding: 2rem 0;
+    max-width: 36.5% !important;
+    flex: 0 0 36.5%;
+
+    
+}
+.bgachievements .cbg h4{
+    margin-bottom: 1rem;
+}
+.bgachievements div{
+    background: #c7c7c750;
+}
+.bgachievements .cbg:nth-child(1){
+    margin-right: 1% !important;
+    margin-left: 1% !important;
+
+}
+.bgachievements h3{
+    position: absolute;
+
+    margin: auto;
+    bottom: 0;
+    left: 0%;
+    right: 0;
+    top: 0;
+    width: 90%;
+    height: max-content;
+}
+.games ul  li img{
+    width: 40px;
+    height: 40px;
+}
+
+.games ul li{
+    float: left;    padding:.5rem;
+    cursor: pointer;
+    list-style-type: none;
+}
+.games ul li.text-center:nth-child(1){
+background: #2f2f2f;
+
+}
+.games ul li.text-center:hover{
+    background: #2f2f2f;
+}
+.games ul{
+    margin-bottom: 0;
+}
+.bgachievements li{
+    color: white;
+    list-style: none;
+}
+.col-12.paddingzero{
+    background: #1b1b1b;
+}
+
+@media (min-width: 768px ){
+    .card{
+        max-height: 12.9rem;
+    }
+    p{
+        max-height: 7rem;
+    }
+    .bgachievements{
+
+    }
+
+}
+
+@media (max-width: 768px ){
+   li:nth-child(1){
+    width: 100%;
+   }
+
 }
