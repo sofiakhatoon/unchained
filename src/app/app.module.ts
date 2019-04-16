@@ -60,6 +60,7 @@ import { VideoDetailsComponent } from './home/stream-videos/video-details/video-
 import { VideoOrderByDescPipe } from './pipe/videoOrderByDesc.pipe';
 import { RouterLinkReplacePipe } from './pipe/routerLinkReplace.pipe';
 import { RouterLinkUnReplacePipe } from './pipe/RouterLinkUnReplace.pipe';
+import { TwitchchannelsCtrlComponent } from './admin/twitchchannels-ctrl/twitchchannels-ctrl.component';
 
 
 @NgModule({
@@ -95,6 +96,7 @@ import { RouterLinkUnReplacePipe } from './pipe/RouterLinkUnReplace.pipe';
       StreamsHomeComponent,
       VideosHomeComponent,
       VideoDetailsComponent,
+      TwitchchannelsCtrlComponent,
   
 
 

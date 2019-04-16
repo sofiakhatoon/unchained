@@ -1,0 +1,110 @@
+<div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="achievement_tournament"
+      [(ngModel)]="addItems.achievement_tournament"
+      required
+      type="text"
+      placeholder="Tournament Name"
+    />
+  </div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="achievement_prize"
+      [(ngModel)]="addItems.achievement_prize"
+      required
+       type="number" min="0" step="any"
+      placeholder="Prize $"
+      style="width:80% !important;display: inline-block;"
+    />
+    <span class="text-center" style="width: 20% !important;color:#333" ><i class="fa fa-usd"></i></span>
+</div>
+ 
+  <div class="form-group">
+ 
+  </div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      id="dates"
+      name="achievement_date"
+      [ngModel]="addItems.achievement_date | date:'yyyy-MM-dd'"  
+      (ngModelChange)="today = $event"    
+      required
+      type="date"
+      placeholder="Tournament Date"
+      *ngIf="data.editBTN"
+    />
+    <input
+      class="form-control mr-sm-2"
+      id="dates"
+      name="achievement_date"
+      [(ngModel)]="addItems.achievement_date"    
+      *ngIf="!data.editBTN"
+      required
+      type="date"
+      placeholder="Tournament Date"
+    />
+  </div>
+  <div class="form-group">
+      
+
+  <label class="radio-inline"><input name="achievement_status"
+    [(ngModel)]="addItems.achievement_status"
+    required
+    [checked]="addItems.achievement_status==1"
+    type="radio"  [value]="1"
+    placeholder="Tournament Status">Active &nbsp; </label>
+
+
+  <label class="radio-inline"><input type="radio" name="achievement_status"
+    [(ngModel)]="addItems.achievement_status"
+    [checked]="addItems.achievement_status==0"
+    required
+    type="radio" [value]="0"
+    placeholder="Tournament Status" >Passive</label>
+
+
+
+  </div>
+
+  <div class="form-group">
+    
+    <select [(ngModel)]="addItems.game_id" >
+        <option value='0'>Select Game </option>
+        <option *ngFor="let c of data.games" [ngValue]="c.game_id"  [selected]="addItems.game_id==true"  >{{c.game_name}}</option>
+    </select>
+ 
+
+  </div>
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="place"
+      [(ngModel)]="addItems.achievement_place"
+      required
+     
+      placeholder="Place"
+    />
+  </div>
+  <img src="../../../assets/achievements/{{addItems.achievement_imgurl}}" *ngIf="addItems.achievement_imgurl" width="64px" />
+  <div class="form-group">
+ 
+    <input type="file" #fileInput placeholder="Upload file..."  class="inputfile" />
+    <label for="file"> <i class="fa fa-upload" aria-hidden="true"></i>
+     {{fileInputMessage}}</label>
+  </div>
+
+  
+  <button (click)="add()" *ngIf="!data.editBTN" class="btn btn-primary">Add</button>
+  <button (click)="edit()" *ngIf="data.editBTN" class="btn btn-primary">Edit</button>
+
+  
+
+</div>
+
+
+
+
