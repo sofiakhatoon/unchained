@@ -11,7 +11,7 @@
       </th>
       <th scope="col"> <input type="text" class="form-control textinput" placeholder="Search By Channel id"
         [(ngModel)]="searchTermByID" /> </th>
-      <th scope="col">Channel Description</th>
+      <th scope="col">Description</th>
       <th scope="col">Status </th>
       <th scope="col">Player&Game</th>
       <th scope="col">Insert Date</th>
@@ -21,26 +21,22 @@
       <th scope="col">Delete</th>
   </thead>
   <tbody>
+    <tr *ngFor="let item of twchannels; let i=index">
+        <td><span [innerHtml]="i"></span></td>
+        
+      <td><span>{{item.twitch_channel_name}}</span></td>
+      <td><span>{{item.twitch_channel_id}}</span></td>
+      <td><span>{{item.twitch_channel_description}}</span></td>
+      <td><span>{{item.twitch_channel_status}}</span></td>
+      <td><span>{{item.twitch_channel_insertdatetime}}</span></td>
+      <td><span>{{item.twitch_channel_updatedatetime}}</span></td>
+      <td><span>{{item.game_id}}</span></td>
+      <td><a (click)='openEditModal(item.achievement_id)' class="btn btn-warning" style="cursor:pointer"> <i
+        class="fa fa-pencil fa-2x"></i></a> </td>
+<td><a (click)='delete(item.achievement_id)' class="btn btn-danger" style="cursor:pointer"> <i
+        class="fa fa-remove fa-2x"></i></a> </td>
+    </tr>
 
-      <tr
-          *ngFor="let item of items | achievementsSearch:searchTerm |  achievementsFilterByDate :date | achievementsFilterByPrize:prizeboolean  | achievementsFilterByGame:gameId ">
-          <td scope="row"> <span><img src="../../assets/achievements/{{item.achievement_imgurl}}"
-                      style="width:50px;"></span>
-          </td>
-          <td><span>{{item.achievement_tournament}}</span></td>
-          <td>{{item.achievement_place}}th</td>
-          <td [innerHtml]="item.achievement_date | date: 'yyyy/MM/dd'"></td>
-          <td>{{item.achievement_prize}}</td>
-          <td>{{item.games.game_name}}</td>
-          <td [innerHTML]="item.achievement_status | intToactivepassive:item.achievement_status"></td>
-          <td [innerHtml]="item.achievement_insertdatetime | date: 'yyyy/MM/dd hh:mm'"></td>
-          <td [innerHtml]="item.achievement_updatedatetime | date: 'yyyy/MM/dd hh:mm'"></td>
-          <td><a (click)='openEditModal(item.achievement_id)' class="btn btn-warning" style="cursor:pointer"> <i
-                      class="fa fa-pencil fa-2x"></i></a> </td>
-          <td><a (click)='delete(item.achievement_id)' class="btn btn-danger" style="cursor:pointer"> <i
-                      class="fa fa-remove fa-2x"></i></a> </td>
-
-      </tr>
   </tbody>
 </table>
 

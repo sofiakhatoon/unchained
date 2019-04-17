@@ -61,6 +61,7 @@ import { VideoOrderByDescPipe } from './pipe/videoOrderByDesc.pipe';
 import { RouterLinkReplacePipe } from './pipe/routerLinkReplace.pipe';
 import { RouterLinkUnReplacePipe } from './pipe/RouterLinkUnReplace.pipe';
 import { TwitchchannelsCtrlComponent } from './admin/twitchchannels-ctrl/twitchchannels-ctrl.component';
+import { ModalfortwitchctrlComponent } from './admin/twitchchannels-ctrl/modalfortwitchctrl/modalfortwitchctrl.component';
 
 
 @NgModule({
@@ -97,6 +98,7 @@ import { TwitchchannelsCtrlComponent } from './admin/twitchchannels-ctrl/twitchc
       VideosHomeComponent,
       VideoDetailsComponent,
       TwitchchannelsCtrlComponent,
+      ModalfortwitchctrlComponent,
   
 
 
@@ -136,6 +138,6 @@ import { TwitchchannelsCtrlComponent } from './admin/twitchchannels-ctrl/twitchc
    bootstrap: [
       AppComponent
    ],
-   entryComponents: [ ModalComponent ]
+   entryComponents: [ ModalComponent,ModalfortwitchctrlComponent ]
 })
 export class AppModule { }

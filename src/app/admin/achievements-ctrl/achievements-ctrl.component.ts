@@ -18,8 +18,7 @@ export class AchievementsCtrlComponent implements OnInit {
   constructor(
     private achievementsService: AchievementsService,
     private gamesService: GamesService,
-    public dialog: MatDialog,
-    private authService:AuthService
+    public dialog: MatDialog
   ) {
     this.gamesService.getGamesForAdmin().subscribe(data => {
       this.games = data;

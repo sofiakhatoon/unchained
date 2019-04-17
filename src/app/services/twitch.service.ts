@@ -25,24 +25,26 @@ export class TwitchService {
 
   //----Ctrl Panel
   addChannels(item:TwitchChannelsAddEdit):Observable<TwitchChannelsAddEdit>{
-    
+    console.log(item);
     const data:TwitchChannelsAddEdit={
-      channel_id:item.channel_id,
-      channel_des:item.channel_des,
-      channel_name:item.channel_name,
-      status:item.status,
+      twitch_channel_id:item.twitch_channel_id,
+      twitch_channel_description:item.twitch_channel_description,
+      twitch_channel_name:item.twitch_channel_name,
+      twitch_channel_status:item.twitch_channel_status,
+      twitch_channel_insertdatetime:item.twitch_channel_insertdatetime,
+      twitch_channel_updatedatetime:item.twitch_channel_updatedatetime,
       game_id:item.game_id,
       player_id:item.player_id
     };
 
     let headers = new HttpHeaders();
     let bearerToken = "Bearer " + this.authService.token;
-    let accept="application/json";
-    console.log(bearerToken);
-    const options = {
+    let accept2="application/json";
+    //console.log(bearerToken);
+    const options2 = {
       headers: new HttpHeaders({
         Authorization: bearerToken,
-        Accept:accept
+        Accept:accept2
       })
     };
         //console.log(options);
@@ -50,9 +52,16 @@ export class TwitchService {
       .post<TwitchChannelsAddEdit>(
         this.baseMyApi + "TwitchChannels/add",
         data,
-        options
+        options2
       );
   }
+
+  getChannels(): Observable<TwitchChannelsAddEdit[]>{
+    return this.httpClient.get<TwitchChannelsAddEdit[]>(
+      this.baseMyApi + "TwitchChannels/getTwitchChannelsForAdmin"
+    );
+  }
+
 
 
   //---------------

@@ -1,0 +1,21 @@
+input.textinput{
+    width: 100% !important;
+ 
+
+
+}
+input.dateinput{
+    width: 100% !important;
+  
+}
+
+input,select {
+    border: 0;
+    border-bottom: 1px solid darkgrey;
+    border-radius: 0;
+}
+
+input:focus , select:focus{
+    box-shadow: none !important;
+    border-color: black;
+}

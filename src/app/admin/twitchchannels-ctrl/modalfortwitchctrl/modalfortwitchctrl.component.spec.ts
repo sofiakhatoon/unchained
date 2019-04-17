@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ModalfortwitchComponent } from './modalfortwitch.component';
+import { ModalfortwitchctrlComponent } from './modalfortwitchctrl.component';
 
-describe('ModalfortwitchComponent', () => {
-  let component: ModalfortwitchComponent;
-  let fixture: ComponentFixture<ModalfortwitchComponent>;
+describe('ModalfortwitchctrlComponent', () => {
+  let component: ModalfortwitchctrlComponent;
+  let fixture: ComponentFixture<ModalfortwitchctrlComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalfortwitchComponent ]
+      declarations: [ ModalfortwitchctrlComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalfortwitchComponent);
+    fixture = TestBed.createComponent(ModalfortwitchctrlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

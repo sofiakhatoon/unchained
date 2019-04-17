@@ -1,0 +1,77 @@
+<div>
+
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="twitch_channel_name"
+      [(ngModel)]="addItems.twitch_channel_name"
+      required
+      type="text"
+      placeholder="Channel Name *"
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      class="form-control mr-sm-2"
+      name="twitch_channel_name"
+      [(ngModel)]="addItems.twitch_channel_description"
+  
+      type="text"
+      placeholder="Channel Description"
+    />
+  </div>
+
+
+  <div class="form-group">
+      
+
+    <label class="radio-inline"><input name="twitch_channel_status"
+      [(ngModel)]="addItems.twitch_channel_status"
+      required
+      [checked]="addItems.twitch_channel_status==1"
+      type="radio"  [value]="1"
+      placeholder="Status">Active &nbsp; </label>
+  
+  
+    <label class="radio-inline"><input type="radio" name="twitch_channel_status"
+      [(ngModel)]="addItems.twitch_channel_status"
+      [checked]="addItems.twitch_channel_status==0"
+      required
+      type="radio" [value]="0"
+      placeholder="Status" >Passive</label>
+  
+  
+  
+  </div>
+  
+  <div class="form-group">
+    
+    <select [(ngModel)]="addItems.game_id" (change)="onChangeGame($event)" >
+        <option value='0'>Select Game </option>
+        <option *ngFor="let c of data.games" value="{{c.game_id}}"  >{{c.game_name}}</option>
+    </select>
+ 
+
+  </div>
+
+  <div class="form-group">
+    
+    <select [(ngModel)]="addItems.player_id" id="playersbox"  [disabled]="isDisabled" >
+        <option value='0'>Select Player </option>
+        <option *ngFor="let k of playersByGame" [ngValue]="k.player_id"   >{{k.player_username}}</option>
+    </select>
+ 
+
+  </div>
+
+
+  <button (click)="add()" *ngIf="!data.editBTN" class="btn btn-primary">Add</button>
+  <button (click)="edit()" *ngIf="data.editBTN" class="btn btn-primary">Edit</button>
+
+
+</div>
+
+
+
+
