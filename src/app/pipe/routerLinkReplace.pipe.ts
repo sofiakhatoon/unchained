@@ -11,7 +11,7 @@ export class RouterLinkReplacePipe implements PipeTransform {
     
       value=value.replace(' ','-');
     }
-    console.log(value);
+    //console.log(value);
     return value;
   }
 

@@ -7,14 +7,14 @@ import { PlayersService } from 'src/app/services/players.service';
 import { Player } from 'src/app/models/player';
 import { TwitchChannelsAddEdit } from 'src/app/models/TwitchChannelsAddEdit';
 import { TwitchService } from 'src/app/services/twitch.service';
+import { TwchannelsGameIdToNameConvertPipe } from 'src/app/pipe/twchannelsGameIdToNameConvert.pipe';
 
 
 @Component({
   selector: 'app-twitchchannels-ctrl',
   templateUrl: './twitchchannels-ctrl.component.html',
   styleUrls: ['./twitchchannels-ctrl.component.css'],
-  providers:[GamesService,PlayersService]
-})
+  providers:[GamesService,PlayersService]})
 export class TwitchchannelsCtrlComponent implements OnInit {
 
   constructor(
@@ -32,8 +32,8 @@ export class TwitchchannelsCtrlComponent implements OnInit {
         this.players = data;
       });
       this.twitchService.getChannels().subscribe(data=>{
-        console.log(data);
-        this.twchannels=data;
+     
+           this.twchannels=data;
       })
 
     }
@@ -45,11 +45,18 @@ export class TwitchchannelsCtrlComponent implements OnInit {
   public openModalForTwitchChannels() {
     this.dialog.open(ModalfortwitchctrlComponent, { data: { games: this.games, editBTN: false,players:this.players } });
   }
-  
-  public openEditModal(id: number) {
-    //console.log(this.items.filter(f => f.achievement_id == id) );
-    //this.dialog.open(ModalfortwitchctrlComponent, { data: { games: this.games, editBTN: true, edititem: this.items.filter(f => f.achievement_id == id) } });
+  public openEditModalForTwitchChannels(id:number) {
+    this.dialog.open(ModalfortwitchctrlComponent, { data: { games: this.games, editBTN: true,players:this.players,edititem:this.twchannels.filter(f=>f.id==id) } });
   }
+  delete(id: number) {
+
+    let c = this.twitchService.delete(this.twchannels.filter(f => f.id == id)[0]);
+    this.twchannels = this.twchannels.filter(f => f.id != id);
+
+  }
+
+ 
+
   ngOnInit() {
   }
 

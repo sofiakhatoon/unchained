@@ -39,3 +39,8 @@
 .inputfile + label {
 	cursor: pointer; /* "hand" cursor */
 }
+img{
+    transition: all .2s;
+    margin: 15px 0;
+}
+

@@ -16,7 +16,7 @@ export class VideosHomeComponent implements OnInit {
   itemsVideo: VideosModel[] = [];
   ngOnInit() {
     this.youtubeService.getChannelVideos().subscribe(data => {
-      console.log(data);
+      //console.log(data);
       for (let y of data.items) {
 
 
@@ -35,8 +35,36 @@ export class VideosHomeComponent implements OnInit {
 
       }
     });
-    console.log(this.itemsVideo);
-    for (let username of this.users) {
+    //console.log(this.itemsVideo);
+
+    this.twitchService.getChannelsForClient().subscribe(data=>{
+
+      for(let x of data){
+        this.twitchService.getChannelVideos(x.twitch_channel_id.toString()).subscribe(res2=>{
+          for (let x of res2.videos) {
+
+            if(x.thumbnails.small.length<1){
+              continue;
+            }
+            const item: VideosModel = {
+              title: x.title,
+              des: x.description,
+              channelId: x.channel._id,
+              videoId: x._id,
+              img: x.preview.large,
+              insertdate: x.published_at,
+              source: "twitch"
+
+            };
+            // console.log(x._id);
+            this.itemsVideo.push(item);
+          }
+        });
+      }
+
+    });
+
+    /*for (let username of this.users) {
 
       this.twitchService
         .getChannelInfo(username.x)
@@ -77,7 +105,7 @@ export class VideosHomeComponent implements OnInit {
 
           //console.log(this.itemsVideo);
         });
-    }
+    }*/
 
 
   }

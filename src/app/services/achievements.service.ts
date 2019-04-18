@@ -41,8 +41,6 @@ export class AchievementsService {
     }
     let headers = new HttpHeaders();
     let bearerToken = "Bearer " + this.authService.token;
-    console.log(bearerToken);
-    headers.append("Authorization", bearerToken);
 
     const options = {
       headers: new HttpHeaders({

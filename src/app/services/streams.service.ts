@@ -18,7 +18,7 @@ export class StreamsService {
    
   }
   getStreamById(id):Observable<Streams>{
-    console.log(id);
+    //console.log(id);
     return this.httpClient.get<Streams>(this.path + "VideoStream/details/"+id);
   }
 

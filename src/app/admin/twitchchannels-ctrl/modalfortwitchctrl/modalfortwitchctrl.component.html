@@ -8,6 +8,7 @@
       required
       type="text"
       placeholder="Channel Name *"
+      [disabled]="data.editBTN" 
     />
   </div>
 
@@ -59,12 +60,19 @@
     
     <select [(ngModel)]="addItems.player_id" id="playersbox"  [disabled]="isDisabled" >
         <option value='0'>Select Player </option>
-        <option *ngFor="let k of playersByGame" [ngValue]="k.player_id"   >{{k.player_username}}</option>
+        <option *ngFor="let k of playersByGame" [ngValue]="k.player_id"    >{{k.player_username}}</option>
     </select>
  
 
   </div>
-
+  <img src="../../../assets/twitch/{{addItems.twitch_channel_img_url}}" *ngIf="addItems.twitch_channel_img_url" width="128px" />
+ 
+  <div class="form-group">
+ 
+    <input type="file" #fileInput placeholder="Upload file..."  class="inputfile" />
+    <label for="file"> <i class="fa fa-upload" aria-hidden="true"></i>
+     {{fileInputMessage}}</label>
+  </div>
 
   <button (click)="add()" *ngIf="!data.editBTN" class="btn btn-primary">Add</button>
   <button (click)="edit()" *ngIf="data.editBTN" class="btn btn-primary">Edit</button>

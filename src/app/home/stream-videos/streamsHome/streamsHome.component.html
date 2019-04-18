@@ -10,9 +10,12 @@
           <span class="item-video-btn">
 
           </span>
+          <span class="live">
+           <img src="../../../../assets/img/live.png" width="50px"/>
+          </span>
         </div>
         <div class="card" *ngIf="item.stream==null" style="width: 100%;">
-          <img src="../../../assets/img/streams.jpg" width="100%" />
+          <img src="../../../../assets/twitch/{{item.offlineImg}}" *ngIf="item.offlineImg" width="100%" />
           <span class="item-video-btn">
 
           </span>

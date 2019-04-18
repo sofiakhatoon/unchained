@@ -22,5 +22,8 @@ export class GamesService {
     return this.httpClient.get<Games[]>(this.path + "Games/getAllForAdmin");
    
   }
+  getGameById(id:number):Observable<Games>{
+    return this.httpClient.get<Games>(this.path + "Games/getById/"+id);
+  }
 
 }

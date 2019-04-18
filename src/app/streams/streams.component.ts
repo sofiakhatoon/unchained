@@ -25,34 +25,21 @@ export class StreamsComponent implements OnInit {
     let Videos: any;
     this.TwchannelArray = [];
 
-    for (let username of this.users) {
-
-      this.twitchService
-        .getChannelInfo(username.x)
-
-        .pipe(
-          tap(x => username.y = x.users[0]._id),
-
-
-          flatMap(resx =>
-            this.twitchService.getChannelStream(username.y)
-          )
-
-
-
-        )
-        .subscribe(res2 => {
-
+    this.twitchService.getChannelsForClient().subscribe(data=>{
+      for(let x of data){
+        this.twitchService.getChannelStream(x.twitch_channel_id.toString()).subscribe(res2=>{
+          //console.log(res2);
+    
           const item: Twchannel = {
-            username: username.x,
+            username: x.twitch_channel_name,
             stream: res2.stream,
-            _id: username.y,
-            embed: '<iframe src="https://player.twitch.tv/?channel=' + username + '" frameborder="0" allowfullscreen="true" scrolling="no" height="380px" width="100%"> </iframe>',
-            offlineImg: res2.stream == null ? "../../../assets/img/streams.jpg" : null,
+            _id: x.twitch_channel_id,
+            embed:"",
+             offlineImg: res2.stream == null ? x.twitch_channel_img_url : null,
             videos: null
 
           };
-
+          //console.log(x);
           this.TwchannelArray.push(item);
           this.TwchannelArray.sort((val1, val2) => {
             return (
@@ -60,10 +47,20 @@ export class StreamsComponent implements OnInit {
             );
           });
           this.itemsStream = this.TwchannelArray;
-
-          console.log(this.itemsStream[0]);
+          this.itemsStream.sort((x, y) => {
+            if (x.stream!=null) {
+              return -1;
+            }
+            if (y.stream!=null) {
+              return 1;
+            }
+            return 0;
+          });
+          //console.log(this.itemsStream[0]);
         });
-    }
+      }
+    
+  });
   }
 
   clickMore(){

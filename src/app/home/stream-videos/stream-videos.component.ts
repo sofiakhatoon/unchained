@@ -40,7 +40,7 @@ export class StreamVideosComponent implements OnInit {
 
     this.video=true;
   
-    console.log(this.video);
+    //console.log(this.video);
   }
 
   viewVideos() {
@@ -52,7 +52,7 @@ element.classList.add("svbuttonbg");
     }
     
     this.video=false;
-    console.log(this.video);
+    //console.log(this.video);
 
  
   }

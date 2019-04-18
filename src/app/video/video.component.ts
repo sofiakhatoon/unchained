@@ -45,29 +45,11 @@ export class VideoComponent implements OnInit {
 
       }
     });
-    console.log(this.itemsVideo);
-    for (let username of this.users) {
+    //console.log(this.itemsVideo);
+    this.twitchService.getChannelsForClient().subscribe(data=>{
 
-      this.twitchService
-        .getChannelInfo(username.x)
-
-        .pipe(
-          tap(x => username.y = x.users[0]._id),
-
-
-          flatMap(resx =>
-            this.twitchService.getChannelVideos(username.y)
-          )
-
-
-
-        )
-        .subscribe(res2 => {
-
-          if(this.itemsVideo.length>this.end){
-            this.moreBTN=true;
-          }
-
+      for(let x of data){
+        this.twitchService.getChannelVideos(x.twitch_channel_id.toString()).subscribe(res2=>{
           for (let x of res2.videos) {
 
             if(x.thumbnails.small.length<1){
@@ -86,10 +68,10 @@ export class VideoComponent implements OnInit {
             // console.log(x._id);
             this.itemsVideo.push(item);
           }
-
-          //console.log(this.itemsVideo);
         });
-    }
+      }
+
+    });
 
 
 

@@ -62,6 +62,10 @@ import { RouterLinkReplacePipe } from './pipe/routerLinkReplace.pipe';
 import { RouterLinkUnReplacePipe } from './pipe/RouterLinkUnReplace.pipe';
 import { TwitchchannelsCtrlComponent } from './admin/twitchchannels-ctrl/twitchchannels-ctrl.component';
 import { ModalfortwitchctrlComponent } from './admin/twitchchannels-ctrl/modalfortwitchctrl/modalfortwitchctrl.component';
+import { TwchannelsGameIdToNameConvertPipe } from './pipe/twchannelsGameIdToNameConvert.pipe';
+import { TwchannelsPlayerIdToNameConvertPipe } from './pipe/twchannelsPlayerIdToNameConvert.pipe';
+import { TwhannelsSearchByUserNamePipe } from './pipe/twhannelsSearchByUserName.pipe';
+import { TwchannelsSearchByIdPipe } from './pipe/twchannelsSearchById.pipe';
 
 
 @NgModule({
@@ -113,7 +117,11 @@ import { ModalfortwitchctrlComponent } from './admin/twitchchannels-ctrl/modalfo
       SanitizeHtmlPipe,
       VideoOrderByDescPipe,
       RouterLinkReplacePipe,
-      RouterLinkUnReplacePipe
+      RouterLinkUnReplacePipe,
+      TwchannelsGameIdToNameConvertPipe,
+      TwchannelsPlayerIdToNameConvertPipe,
+      TwhannelsSearchByUserNamePipe,
+      TwchannelsSearchByIdPipe
    ],
    imports: [
       BrowserModule,

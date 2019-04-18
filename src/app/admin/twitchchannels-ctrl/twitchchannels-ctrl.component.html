@@ -4,39 +4,43 @@
 </div>
 <table class="table table-responsive table-hover">
   <thead>
-      <th scope="col">#</th>
-      <th scope="col">
-              <input type="text" class="form-control textinput" placeholder="Search By Name"
-              [(ngModel)]="searchTerm" />
-      </th>
-      <th scope="col"> <input type="text" class="form-control textinput" placeholder="Search By Channel id"
+    <th scope="col">#</th>
+    <th scope="col">Offline Img</th>
+    <th scope="col">
+      <input type="text" class="form-control textinput" placeholder="Search By Name" [(ngModel)]="searchTerm" />
+    </th>
+    <th scope="col"> <input type="text" class="form-control textinput" placeholder="Channel id"
         [(ngModel)]="searchTermByID" /> </th>
-      <th scope="col">Description</th>
-      <th scope="col">Status </th>
-      <th scope="col">Player&Game</th>
-      <th scope="col">Insert Date</th>
-      <th scope="col">Update Date</th>
+    <th scope="col">Description</th>
+    <th scope="col">Status </th>
+    <th scope="col">Game</th>
+    <th scope="col">Player</th>
+    <th scope="col">Insert Date</th>
+    <th scope="col">Update Date</th>
 
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
   </thead>
   <tbody>
-    <tr *ngFor="let item of twchannels; let i=index">
-        <td><span [innerHtml]="i"></span></td>
-        
-      <td><span>{{item.twitch_channel_name}}</span></td>
-      <td><span>{{item.twitch_channel_id}}</span></td>
-      <td><span>{{item.twitch_channel_description}}</span></td>
+    <tr
+      *ngFor="let item of twchannels |twhannelsSearchByUserName:searchTerm |  twchannelsSearchById:searchTermByID ; let i=index">
+      <td><span [innerHtml]="i+1"></span></td>
+      <td><img *ngIf="item.twitch_channel_img_url" src="../../../assets/twitch/{{item.twitch_channel_img_url}}"  style="width:50px;"></td>
+      <td><span *ngIf="item.twitch_channel_name">{{item.twitch_channel_name}}</span></td>
+      <td><span *ngIf="item.twitch_channel_id">{{item.twitch_channel_id}}</span></td>
+      <td><span *ngIf="item.twitch_channel_description">{{item.twitch_channel_description}}</span></td>
       <td><span>{{item.twitch_channel_status}}</span></td>
-      <td><span>{{item.twitch_channel_insertdatetime}}</span></td>
-      <td><span>{{item.twitch_channel_updatedatetime}}</span></td>
-      <td><span>{{item.game_id}}</span></td>
-      <td><a (click)='openEditModal(item.achievement_id)' class="btn btn-warning" style="cursor:pointer"> <i
-        class="fa fa-pencil fa-2x"></i></a> </td>
-<td><a (click)='delete(item.achievement_id)' class="btn btn-danger" style="cursor:pointer"> <i
-        class="fa fa-remove fa-2x"></i></a> </td>
+      <td><span *ngIf="item.game_id" [innerHtml]="item.game_id | twchannelsGameIdToNameConvert:games"></span></td>
+      <td><span *ngIf="item.player_id" [innerHtml]="item.player_id | twchannelsPlayerIdToNameConvert:players"></span>
+      </td>
+      <td><span *ngIf="item.twitch_channel_insertdatetime">{{item.twitch_channel_insertdatetime}}</span></td>
+      <td><span *ngIf="item.twitch_channel_updatedatetime">{{item.twitch_channel_updatedatetime}}</span></td>
+
+      <td><a (click)='openEditModalForTwitchChannels(item.id)' class="btn btn-warning" style="cursor:pointer"> <i
+            class="fa fa-pencil fa-2x"></i></a> </td>
+      <td><a (click)='delete(item.id)' class="btn btn-danger" style="cursor:pointer"> <i
+            class="fa fa-remove fa-2x"></i></a> </td>
     </tr>
 
   </tbody>
 </table>
-
