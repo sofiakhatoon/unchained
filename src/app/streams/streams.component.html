@@ -20,22 +20,25 @@
           <div>
 
 
-            <div class="card" *ngIf="item.stream!=null" style="width: 100%;">
-              <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_{{item.username}}-640x360.jpg" width="100%" />
-              <span class="item-video-btn">
-    
-              </span>
-              <span class="live">
-               <img src="../../../../assets/img/live.png" width="50px"/>
-              </span>
+              <div class="card" *ngIf="item.stream!=null" style="width: 100%;">
+                <img src="https://static-cdn.jtvnw.net/previews-ttv/live_user_{{item.username}}-640x360.jpg" width="100%" />
+                <span class="item-video-btn">
+      
+                </span>
+                <span class="live">
+                 <img src="../../../../assets/img/live.png" width="60px"/>
+                </span>
+              </div>
+              <div class="card" *ngIf="item.stream==null" style="width: 100%;">
+                <img src="../../../../assets/twitch/{{item.offlineImg}}" *ngIf="item.offlineImg" width="100%" />
+                <span class="item-video-btn">
+      
+                </span>
+                <span class="live">
+                    <img src="../../../../assets/img/offline.png" width="60px"/>
+                   </span>
+              </div>
             </div>
-            <div class="card" *ngIf="item.stream==null" style="width: 100%;">
-              <img src="../../../../assets/twitch/{{item.offlineImg}}" *ngIf="item.offlineImg" width="100%" />
-              <span class="item-video-btn">
-    
-              </span>
-            </div>
-          </div>
     
         </a>
     

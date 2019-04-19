@@ -66,6 +66,7 @@ import { TwchannelsGameIdToNameConvertPipe } from './pipe/twchannelsGameIdToName
 import { TwchannelsPlayerIdToNameConvertPipe } from './pipe/twchannelsPlayerIdToNameConvert.pipe';
 import { TwhannelsSearchByUserNamePipe } from './pipe/twhannelsSearchByUserName.pipe';
 import { TwchannelsSearchByIdPipe } from './pipe/twchannelsSearchById.pipe';
+import { UsersCtrlComponent } from './admin/users-ctrl/users-ctrl.component';
 
 
 @NgModule({
@@ -103,6 +104,7 @@ import { TwchannelsSearchByIdPipe } from './pipe/twchannelsSearchById.pipe';
       VideoDetailsComponent,
       TwitchchannelsCtrlComponent,
       ModalfortwitchctrlComponent,
+      UsersCtrlComponent,
   
 
 

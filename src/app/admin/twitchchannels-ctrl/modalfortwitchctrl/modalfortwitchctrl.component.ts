@@ -42,47 +42,64 @@ export class ModalfortwitchctrlComponent implements OnInit {
     this.matDialogRef.close();
   }
   @ViewChild("fileInput") fileInput;
-  add() {
 
+
+  fileChangeEvent(event){
+    console.log(event);
+  }
+  errors:string[];
+  results:string[];
+  add() {
+    this.errors=[];
+    this.results=[];
     const fileBrowser = this.fileInput.nativeElement;
     if (fileBrowser.files && fileBrowser.files[0]) {
       this.addItems.myfile = fileBrowser.files[0];
     }
-
+    
     
     if (!this.addItems.twitch_channel_name) { alert("Name required"); return null; }
     this.twitchService.getChannelInfo(this.addItems.twitch_channel_name).subscribe(data => {
 
       if (!data) {
-        return alert("Wrong Username");
+
+        this.errors.push("Wrong Username");
+        return;
       }
       if (!data.users) {
-        return alert("Wrong Username");
+        this.errors.push("Wrong Username");
+        return;
       }
       if (data.users.length < 1) {
-        return alert("Wrong Username");
+        this.errors.push("Wrong Username");
+        return;
       }
       this.addItems.twitch_channel_id = data.users[0]._id;
       this.twitchService.addChannels(this.addItems).subscribe(
         x => {
           if (x) {
             this.matDialogRef.close();
-            alert("Successful add");
+            this.results.push("Add Successful");
           }
         },
         error => {
-          alert("Error Message: Fill in the required fields");
+          this.errors.push(error.error);
         }
       );
-    })
+    },
+    error=>{
+      console.log(error.error);
+      this.errors.push("Twitch Api Error:"+error.error.message);
+    }
+    )
 
 
 
 
   }
   edit() {
-
-    console.log(this.addItems);
+    this.errors=[];
+    this.results=[];
     const fileBrowser = this.fileInput.nativeElement;
     if (fileBrowser.files && fileBrowser.files[0]) {
       this.addItems.myfile = fileBrowser.files[0];
@@ -90,11 +107,11 @@ export class ModalfortwitchctrlComponent implements OnInit {
     this.twitchService.edit(this.addItems) .subscribe(
       data => {
         if (data) {
-          alert("Successful update");
+          this.results.push("Update Successful");
         }
       },
       error => {
-        alert("Error Message: Fill in the required fields");
+        this.errors.push(error.error);
       }
     );
 

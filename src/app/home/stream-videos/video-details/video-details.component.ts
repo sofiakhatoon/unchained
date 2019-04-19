@@ -27,7 +27,7 @@ export class VideoDetailsComponent implements OnInit {
       this.embed='<iframe  width="100%" style="height:38em" id="video"   src="https://www.youtube.com/embed/'+id+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
  
     }else{
-      this.embed='<iframe id="video" height="38em" src="https://player.twitch.tv/?autoplay=false&video='+id+'" frameborder="0" allowfullscreen="true" scrolling="no" width="100%"></iframe>';
+      this.embed='<iframe id="video" style="height:38em" src="https://player.twitch.tv/?autoplay=false&video='+id+'" frameborder="0" allowfullscreen="true" scrolling="no" width="100%"></iframe>';
  
     }
       setTimeout(() => {

@@ -65,18 +65,26 @@
  
 
   </div>
-  <img src="../../../assets/twitch/{{addItems.twitch_channel_img_url}}" *ngIf="addItems.twitch_channel_img_url" width="128px" />
+  <img src="../../../assets/twitch/{{addItems.twitch_channel_img_url}}" *ngIf="addItems.twitch_channel_img_url" width="128px"  />
  
   <div class="form-group">
  
-    <input type="file" #fileInput placeholder="Upload file..."  class="inputfile" />
-    <label for="file"> <i class="fa fa-upload" aria-hidden="true"></i>
-     {{fileInputMessage}}</label>
+    <input type="file" #fileInput placeholder="Upload file..."  (change)="fileChangeEvent($event)" class="inputfile" />
+    <label for="file" > <i class="fa fa-upload" aria-hidden="true"></i>(jpeg 412x213)</label>
   </div>
 
   <button (click)="add()" *ngIf="!data.editBTN" class="btn btn-primary">Add</button>
   <button (click)="edit()" *ngIf="data.editBTN" class="btn btn-primary">Edit</button>
-
+  <div class="errors">
+    <span *ngFor="let error of errors">
+        *{{error}}
+    </span>
+  </div>
+  <div class="results">
+      <span *ngFor="let result of results">
+          *{{result}}
+      </span>
+    </div>
 
 </div>
 

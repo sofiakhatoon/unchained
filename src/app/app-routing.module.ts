@@ -22,6 +22,7 @@ import { StreamDetailsComponent } from './home/stream-videos/stream-details/stre
 import { AchievementsCtrlComponent } from './admin/achievements-ctrl/achievements-ctrl.component';
 import { VideoDetailsComponent } from './home/stream-videos/video-details/video-details.component';
 import { TwitchchannelsCtrlComponent } from './admin/twitchchannels-ctrl/twitchchannels-ctrl.component';
+import { UsersCtrlComponent } from './admin/users-ctrl/users-ctrl.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,7 @@ const routes: Routes = [
   { path: 'Videos-control', component: OthernavComponent,children: [{ path: '', component:VideosCtrlComponent }],canActivate:[LoginGuard] },
   { path: 'Achievements-control', component: OthernavComponent,children: [{ path: '', component:AchievementsCtrlComponent }],canActivate:[LoginGuard] },
   { path: 'TwitchChannels-control', component: OthernavComponent,children: [{ path: '', component:TwitchchannelsCtrlComponent }],canActivate:[LoginGuard] },
+  { path: 'Users-control', component: OthernavComponent,children: [{ path: '', component:UsersCtrlComponent }],canActivate:[LoginGuard] },
   {path:'Auth',component:LoginComponent},
   { path: '**', redirectTo: 'Home', pathMatch: 'full' }
 

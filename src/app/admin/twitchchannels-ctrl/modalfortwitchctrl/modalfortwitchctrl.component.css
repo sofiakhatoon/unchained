@@ -12,8 +12,8 @@
     background: rgba(0,0,0,0.6);
 }
 .inputfile {
-    width: 10.4%;
-    height: 8%;
+    width: 13em;
+    height: 71px;
     opacity: 0;
     overflow: hidden;
     position: absolute;
@@ -44,3 +44,12 @@ img{
     margin: 15px 0;
 }
 
+
+.errors{
+    padding: 10px 0 !important;
+    color: red;
+}
+.results{
+    padding: 10px 0 !important;
+    color: rgb(170, 240, 78);
+}

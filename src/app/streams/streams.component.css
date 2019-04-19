@@ -152,6 +152,16 @@ img{
 .streamscontainer {
     min-height: 35vw;
 }
+.live{
+    position: absolute;
+ 
+    right: 5px;
+    top: 5px;
+    padding: 0 2px;
+    font-weight: 500;
+    color: white;
+
+}
 @media (min-width: 768px){
 
     .card{

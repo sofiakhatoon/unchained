@@ -54,9 +54,20 @@ export class AuthService {
     localStorage.setItem(this.TOKEN_KEY, token);
   }
   logOut() {
+
+    
     localStorage.removeItem(this.TOKEN_KEY);
     this.router.navigateByUrl("/Auth")
     alert("Sistemden çıkış yapıldı");
+    /*
+    let headers = new HttpHeaders();
+    headers = headers.append("Content-Type", "application/json");
+    this.httpClient
+      .post(this.path + "register", registerUser, { headers: headers })
+      .subscribe(data => {
+
+      });*/
+  
   }
 
   loggedIn() {

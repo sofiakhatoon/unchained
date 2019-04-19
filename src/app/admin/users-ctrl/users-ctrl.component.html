@@ -1,0 +1,28 @@
+<div class="col-sm-12 text-left mt-4 mb-4">
+    <button class="btn btn-success" (click)="openModalForTwitchChannels()"> <i class="fa fa-plus fa-2x"></i></button>
+    <router-outlet></router-outlet>
+  </div>
+  <table class="table table-responsive table-hover">
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">
+        <input type="text" class="form-control textinput" placeholder="Search By Username" [(ngModel)]="searchTerm" />
+      </th>
+      <th scope="col">Password</th>
+      <th scope="col">Mail</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Last Login Date</th>
+      <th scope="col">Last Exit Date</th>
+      <th scope="col">Status </th>
+      <th scope="col">On</th>
+      
+      <th scope="col">Insert Date</th>
+      <th scope="col">Update Date</th>
+  
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
