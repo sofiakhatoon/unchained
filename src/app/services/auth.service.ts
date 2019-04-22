@@ -7,6 +7,7 @@ import { JwtHelper, tokenNotExpired } from "angular2-jwt";
 import { Router } from "@angular/router";
 import { RegisterUser } from "../models/registerUser";
 import { Globalvariable } from "../app_classes/globalvariable";
+import { ContentType } from '@angular/http/src/enums';
 @Injectable({
   providedIn: "root"
 })
@@ -55,18 +56,25 @@ export class AuthService {
   }
   logOut() {
 
-    
-    localStorage.removeItem(this.TOKEN_KEY);
-    this.router.navigateByUrl("/Auth")
-    alert("Sistemden çıkış yapıldı");
-    /*
-    let headers = new HttpHeaders();
-    headers = headers.append("Content-Type", "application/json");
-    this.httpClient
-      .post(this.path + "register", registerUser, { headers: headers })
-      .subscribe(data => {
 
-      });*/
+   
+    let headers = new HttpHeaders();
+    let bearerToken = "Bearer " + this.token;
+
+    const options = {
+      headers: new HttpHeaders({
+        Authorization: bearerToken
+      })
+    };
+    let data={"token":this.token};
+    this.httpClient
+      .post(this.path + "auth/exit", data,options)
+      .subscribe(data => {
+    
+        localStorage.removeItem(this.TOKEN_KEY);
+        this.router.navigateByUrl("/Auth")
+        alert("Exit the system");
+      });
   
   }
 

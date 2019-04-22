@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AnimateComponent } from './animate/animate.component';
 import { HttpClientModule } from "@angular/common/http";
 
@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SliderComponent } from './home/slider/slider.component';
 import { NavComponent } from './nav/nav.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TeamsComponent } from './teams/teams.component';
 import { StreamVideosComponent } from './home/stream-videos/stream-videos.component';
 import { NewsComponent } from './home/news/news.component';
@@ -28,7 +28,7 @@ import { VideoComponent } from './video/video.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './admin/login/login.component';
 import { OthernavComponent } from './othernav/othernav.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginGuard } from './app_classes/login.guard';
 import { AuthService } from './services/auth.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -49,7 +49,36 @@ import { ModalComponent } from './admin/modal/modal.component';
 import {
    MatButtonModule, MatCardModule, MatDialogModule, MatIconModule, MatMenuModule,
    MatToolbarModule,
- } from '@angular/material';
+   MatAutocompleteModule,
+   MatBadgeModule,
+   MatBottomSheetModule,
+   MatButtonToggleModule,
+   MatCheckboxModule,
+   MatChipsModule,
+   MatStepperModule,
+   MatDatepickerModule,
+   MatDividerModule,
+   MatExpansionModule,
+   MatGridListModule,
+   MatInputModule,
+   MatListModule,
+   MatNativeDateModule,
+   MatPaginatorModule,
+   MatProgressBarModule,
+   MatProgressSpinnerModule,
+   MatRadioModule,
+   MatRippleModule,
+   MatSelectModule,
+   MatSidenavModule,
+   MatSliderModule,
+   MatSlideToggleModule,
+   MatSnackBarModule,
+   MatSortModule,
+   MatTableModule,
+   MatTabsModule,
+   MatTooltipModule,
+   MatTreeModule,
+} from '@angular/material';
 import { FileUploadModule } from 'ng2-file-upload';
 import { AchievementsFilterByGamePipe } from './pipe/achievementsFilterByGame.pipe';
 import { IntToactivepassivePipe } from './pipe/intToactivepassive.pipe';
@@ -67,7 +96,15 @@ import { TwchannelsPlayerIdToNameConvertPipe } from './pipe/twchannelsPlayerIdTo
 import { TwhannelsSearchByUserNamePipe } from './pipe/twhannelsSearchByUserName.pipe';
 import { TwchannelsSearchByIdPipe } from './pipe/twchannelsSearchById.pipe';
 import { UsersCtrlComponent } from './admin/users-ctrl/users-ctrl.component';
-
+import { ModalforusersctrlComponent } from './admin/users-ctrl/modalforusersctrl/modalforusersctrl.component';
+import { ConfirmEqualValidatorDirective } from 'src/shared/confirm-equal-validator.directive';
+import { A11yModule } from '@angular/cdk/a11y';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { PortalModule } from '@angular/cdk/portal';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
    declarations: [
@@ -105,7 +142,8 @@ import { UsersCtrlComponent } from './admin/users-ctrl/users-ctrl.component';
       TwitchchannelsCtrlComponent,
       ModalfortwitchctrlComponent,
       UsersCtrlComponent,
-  
+      ModalforusersctrlComponent,
+
 
 
 
@@ -123,7 +161,10 @@ import { UsersCtrlComponent } from './admin/users-ctrl/users-ctrl.component';
       TwchannelsGameIdToNameConvertPipe,
       TwchannelsPlayerIdToNameConvertPipe,
       TwhannelsSearchByUserNamePipe,
-      TwchannelsSearchByIdPipe
+      TwchannelsSearchByIdPipe,
+
+
+      ConfirmEqualValidatorDirective
    ],
    imports: [
       BrowserModule,
@@ -138,7 +179,96 @@ import { UsersCtrlComponent } from './admin/users-ctrl/users-ctrl.component';
       MatIconModule,
       MatButtonModule,
       MatDialogModule,
-      FileUploadModule
+      FileUploadModule,
+      MatAutocompleteModule,
+      ReactiveFormsModule,
+      A11yModule,
+      CdkStepperModule,
+      CdkTableModule,
+      CdkTreeModule,
+      DragDropModule,
+      MatAutocompleteModule,
+      MatBadgeModule,
+      MatBottomSheetModule,
+      MatButtonModule,
+      MatButtonToggleModule,
+      MatCardModule,
+      MatCheckboxModule,
+      MatChipsModule,
+      MatStepperModule,
+      MatDatepickerModule,
+      MatDialogModule,
+      MatDividerModule,
+      MatExpansionModule,
+      MatGridListModule,
+      MatIconModule,
+      MatInputModule,
+      MatListModule,
+      MatMenuModule,
+      MatNativeDateModule,
+      MatPaginatorModule,
+      MatProgressBarModule,
+      MatProgressSpinnerModule,
+      MatRadioModule,
+      MatRippleModule,
+      MatSelectModule,
+      MatSidenavModule,
+      MatSliderModule,
+      MatSlideToggleModule,
+      MatSnackBarModule,
+      MatSortModule,
+      MatTableModule,
+      MatTabsModule,
+      MatToolbarModule,
+      MatTooltipModule,
+      MatTreeModule,
+      PortalModule,
+      ScrollingModule
+   ],
+   exports: [
+      A11yModule,
+      CdkStepperModule,
+      CdkTableModule,
+      CdkTreeModule,
+      DragDropModule,
+      MatAutocompleteModule,
+      MatBadgeModule,
+      MatBottomSheetModule,
+      MatButtonModule,
+      MatButtonToggleModule,
+      MatCardModule,
+      MatCheckboxModule,
+      MatChipsModule,
+      MatStepperModule,
+      MatDatepickerModule,
+      MatDialogModule,
+      MatDividerModule,
+      MatExpansionModule,
+      MatGridListModule,
+      MatIconModule,
+      MatInputModule,
+      MatListModule,
+      MatMenuModule,
+      MatNativeDateModule,
+      MatPaginatorModule,
+      MatProgressBarModule,
+      MatProgressSpinnerModule,
+      MatRadioModule,
+      MatRippleModule,
+      MatSelectModule,
+      MatSidenavModule,
+      MatSliderModule,
+      MatSlideToggleModule,
+      MatSnackBarModule,
+      MatSortModule,
+      MatTableModule,
+      MatTabsModule,
+      MatToolbarModule,
+      MatTooltipModule,
+      MatTreeModule,
+      PortalModule,
+      ScrollingModule,
+
    ],
    providers: [
       InstagramService,
@@ -148,6 +278,6 @@ import { UsersCtrlComponent } from './admin/users-ctrl/users-ctrl.component';
    bootstrap: [
       AppComponent
    ],
-   entryComponents: [ ModalComponent,ModalfortwitchctrlComponent ]
+   entryComponents: [ModalComponent, ModalfortwitchctrlComponent, ModalforusersctrlComponent]
 })
 export class AppModule { }
