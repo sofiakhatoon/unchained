@@ -40,6 +40,8 @@ export class TwitchchannelsCtrlComponent implements OnInit {
 
     games: Games[];
     players:Player[];
+    searchTerm:string;
+    searchTermByID:string;
     twchannels:TwitchChannelsAddEdit[];
 
   public openModalForTwitchChannels() {

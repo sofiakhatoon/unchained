@@ -33,7 +33,7 @@ export class UsersCtrlComponent implements OnInit {
   }
   users:Users[];
   roles:Rolestable[];
-  
+  searchTerm:string;
   ngOnInit() {
 
 
@@ -41,8 +41,8 @@ export class UsersCtrlComponent implements OnInit {
   public openModal() {
     this.dialog.open(ModalforusersctrlComponent,{ data: { roles: this.roles, editBTN: false } });
   }
-  public openEditModal(id: number) {
-    //console.log(this.items.filter(f => f.achievement_id == id) );
-    //this.dialog.open(ModalComponent, { data: { games: this.games, editBTN: true, edititem: this.items.filter(f => f.achievement_id == id) } });
+  public openEditModal(item:Users) {
+    
+    this.dialog.open(ModalforusersctrlComponent,{ data: { roles: this.roles, editBTN: false, editItem:item } });
   }
 }

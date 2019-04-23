@@ -16,7 +16,57 @@ p{
 
 }
 .selectedroles{
+    transition: height .2s;
+    min-height: 4rem ;
+    max-height: 4rem ;
+    overflow: auto;
     background: #e8e8e8;
+    max-width: 40%
+
+}
+.selectedrole{
+  
     padding: 5px 15px;
+  
     
 }
+.selectedrole div{
+    width: 100%;
+    position: relative;
+    display: block;
+
+}
+.rightPos{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    cursor: pointer;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(49, 49, 49); 
+  
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  ::-webkit-scrollbar-track-piece {
+    background:transparent;
+  
+  }

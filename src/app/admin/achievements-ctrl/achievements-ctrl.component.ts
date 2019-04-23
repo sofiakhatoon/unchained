@@ -28,6 +28,8 @@ export class AchievementsCtrlComponent implements OnInit {
 
   games: Games[];
   prizeboolean: boolean;
+  searchTerm:string;
+  date:Date;
 
   ngOnInit() {
     this.getAchAll();

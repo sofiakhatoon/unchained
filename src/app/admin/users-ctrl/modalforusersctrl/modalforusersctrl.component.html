@@ -47,19 +47,23 @@
     </div>
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Roles" aria-label="Roles" [matAutocomplete]="auto" [formControl]="rolesCtrl">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let item of filteredItem | async" [value]="item.role_name">
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)='addListRoles($event.option.value)'>
+        <mat-option *ngFor="let item of filteredItem | async" [value]="item.role_name" >
 
           <span>{{item.role_name}}</span>
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
-
-    <div class="selectedroles" *ngFor="let item of selectedRoles">
-      <span>{{item}}</span>
-
-
+    <div class="selectedroles">
+        <div class="selectedrole" *ngFor="let item of addItems.rolesTable">
+            <div style="width:100%">
+                <span>{{item.role_name}}</span>
+                <i class="fa fa-times rightPos" (click)="removeSelectedRoles(item)"></i>
+            </div>
+      
+          </div>
     </div>
+ 
 
 
 

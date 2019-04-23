@@ -25,8 +25,7 @@ export class ModalforusersctrlComponent implements OnInit {
   roles: Rolestable[];
   results: string[];
   errors: string[];
-  selectedRoles:string[]=[];
-
+  selectedRoles:Rolestable[]=[];
 
   constructor(
 
@@ -40,15 +39,15 @@ export class ModalforusersctrlComponent implements OnInit {
     this.filteredItem = this.rolesCtrl.valueChanges
       .pipe(
         startWith(''),
-        tap(x=>this.selectedRoles.push(x)),
         map(f => f ? this._filterStates(f) : this.roles.slice())
       );
   
   }
   public _filterStates(value: string): Rolestable[] {
     const filterValue = value.toLowerCase();
- 
-    return this.roles.filter(f => f.role_name.toLowerCase().includes(filterValue));
+    let x=this.roles.filter(f => f.role_name.toLowerCase().includes(filterValue))
+    //console.log(x);
+    return  x;
   }
   addItems: Users = new Users();
   public close() {
@@ -57,7 +56,31 @@ export class ModalforusersctrlComponent implements OnInit {
 
   ngOnInit() {
 
+     if(this.data.editItem){
+       this.addItems=this.data.editItem;
+       console.log(this.addItems);
+     }
 
+  }
+  addListRoles(name:string){
+    const filterValue = name.toLowerCase();
+    const v=this.roles.filter(f=>f.role_name.toLowerCase().includes(name));
+  
+    //this.selectedRoles.push(v[0]);
+    this.addItems.rolesTable.push(v[0]);
+    console.log(this.selectedRoles);
+
+  }
+  removeSelectedRoles(role:Rolestable){
+    const index: number = this.addItems.rolesTable.indexOf(role);
+    if (index !== -1) {
+        //this.selectedRoles.splice(index, 1);
+        this.addItems.rolesTable.splice(index, 1);
+    }    
+  }
+
+  register(){
+    
   }
 
 }

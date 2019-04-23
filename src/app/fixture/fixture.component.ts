@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
 import { RouterService } from "../services/router.service";
 import { MatchesService } from "../services/matches.service";
 import { HttpClient } from "@angular/common/http";
+import { Games } from '../models/games';
 
 @Component({
   selector: "app-fixture",
@@ -31,6 +32,7 @@ export class FixtureComponent implements OnInit {
   resultColorStyle: string;
   radiantWin: boolean;
   radiant: boolean;
+  games:Games[];
 
   spanpositiondiv: HTMLElement;
 

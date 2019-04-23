@@ -13,5 +13,5 @@ export class Users {
     user_exit_date:Date;
     user_insertdatetime:Date;
     user_updatedatetime:Date;
-    RolesTable:Rolestable[]=[];
+    rolesTable:Rolestable[]=[];
 }
