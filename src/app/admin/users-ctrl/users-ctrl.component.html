@@ -8,6 +8,7 @@
       <th scope="col">
         <input type="text" class="form-control textinput" placeholder="Search By Username" [(ngModel)]="searchTerm" />
       </th>
+      <th scope="col">Password</th>
       <th scope="col">User Id</th>
       <th scope="col">Mail</th>
       <th scope="col">Phone</th>
@@ -26,6 +27,7 @@
         <tr *ngFor="let item of users; let i=index">
             <td [innerHTML]="i+1"></td>
             <td [innerHTML]="item.userName"></td>
+            <td class="text-center"><button class="btn btn-success"><i class="fa fa-refresh"></i></button></td>
             <td [innerHTML]="item.userId"></td>
             <td [innerHTML]="item.user_mail"></td>
             <td [innerHTML]="item.user_phone"></td>

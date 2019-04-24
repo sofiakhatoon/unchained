@@ -28,5 +28,12 @@ bearerToken = "Bearer " + this.authService.token;
 
     );
   }
+  RegisterUser(item:Users):Observable<Users>{
+    return this.httpClient.post<Users>(
+
+      this.path+"users/register",item,this.options
+
+    );
+  }
 
 }

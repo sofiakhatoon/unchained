@@ -38,6 +38,8 @@ export class UsersCtrlComponent implements OnInit {
 
 
   }
+
+ 
   public openModal() {
     this.dialog.open(ModalforusersctrlComponent,{ data: { roles: this.roles, editBTN: false } });
   }

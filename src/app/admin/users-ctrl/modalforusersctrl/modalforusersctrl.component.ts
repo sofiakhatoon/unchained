@@ -5,6 +5,7 @@ import { Users } from 'src/app/models/users';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map, tap } from 'rxjs/operators';
+import { UsersService } from 'src/app/services/users.service';
 export interface State {
   flag: string;
   name: string;
@@ -31,7 +32,8 @@ export class ModalforusersctrlComponent implements OnInit {
 
     private matDialogRef: MatDialogRef<ModalforusersctrlComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private ref: ElementRef
+    private ref: ElementRef,
+    private userService:UsersService
 
   ) {
 
@@ -80,7 +82,11 @@ export class ModalforusersctrlComponent implements OnInit {
   }
 
   register(){
-    
+    this.errors=[];
+    this.results=[];
+    this.userService.RegisterUser(this.addItems).subscribe(data=>{
+        console.log(data);
+    });
   }
 
 }
